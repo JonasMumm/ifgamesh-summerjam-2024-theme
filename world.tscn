@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmmtcjsrqqnpv"]
+[gd_scene load_steps=13 format=3 uid="uid://cmmtcjsrqqnpv"]
 
 [ext_resource type="ArrayMesh" uid="uid://c8cuqjitg2g6h" path="res://D3D/IslesBase.res" id="1_d08te"]
 [ext_resource type="ArrayMesh" uid="uid://dh5rkb22rlruv" path="res://D3D/IslesWalls.res" id="2_1dswj"]
 [ext_resource type="Script" path="res://placeholder_controller.gd" id="3_82hsj"]
+[ext_resource type="Script" path="res://camera_controller.gd" id="4_p7pem"]
 
 [sub_resource type="Environment" id="Environment_uay2i"]
 ambient_light_source = 2
@@ -70,7 +71,7 @@ physics_material_override = SubResource("PhysicsMaterial_p3r2g")
 lock_rotation = true
 linear_damp = 2.44
 script = ExtResource("3_82hsj")
-force = 5.0
+force = 3.0
 rotation_speed = 6.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Vehicle"]
@@ -79,6 +80,17 @@ shape = SubResource("SphereShape3D_yqwsl")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Vehicle"]
 mesh = SubResource("SphereMesh_rbwwo")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.611417, 0.791309, 0, -0.791309, 0.611417, 1.23573, 4.38196, 4.48625)
-fov = 50.0
+[node name="CameraController" type="Node3D" parent="." node_paths=PackedStringArray("cam", "focus_target_position")]
+script = ExtResource("4_p7pem")
+cam = NodePath("RotationOffset/Camera3D")
+focus_target_position = NodePath("../Vehicle")
+position_damping_lambda = 3.0
+distance_damping_lambda = 3.0
+fov_damping_lambda = 3.0
+
+[node name="RotationOffset" type="Node3D" parent="CameraController"]
+transform = Transform3D(1, 0, 0, 0, 0.607293, 0.794478, 0, -0.794478, 0.607293, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraController/RotationOffset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.099)
+fov = 20.0
