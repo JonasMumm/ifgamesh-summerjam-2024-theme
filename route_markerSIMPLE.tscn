@@ -10,6 +10,16 @@ disable_receive_shadows = true
 material = SubResource("StandardMaterial3D_vxk8x")
 size = Vector2(0.1, 0.21)
 
+[sub_resource type="Animation" id="Animation_p7xak"]
+length = 0.001
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+
 [sub_resource type="Animation" id="Animation_d24gj"]
 resource_name = "scale_up"
 length = 0.4
@@ -20,16 +30,6 @@ tracks/0/path = NodePath("Visual")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0.05, 0.05, 0.05, 0.4, 1, 1, 1, 1)
-
-[sub_resource type="Animation" id="Animation_p7xak"]
-length = 0.001
-tracks/0/type = "scale_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visual")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wpier"]
 _data = {

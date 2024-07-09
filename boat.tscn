@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0pssokiknx7u"]
+
+[ext_resource type="Script" path="res://placeholder_controller.gd" id="1_ouqvi"]
+[ext_resource type="Script" path="res://route_placer.gd" id="2_8wexm"]
+[ext_resource type="PackedScene" uid="uid://dh05rbjdwgx5q" path="res://route_marker_blue.tscn" id="3_2yfl1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p3r2g"]
+friction = 0.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yqwsl"]
+radius = 0.1
+
+[sub_resource type="SphereMesh" id="SphereMesh_rbwwo"]
+radius = 0.1
+height = 0.2
+
+[node name="Boat" type="RigidBody3D" node_paths=PackedStringArray("route_placer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23573, 0.593467, 0.672035)
+collision_layer = 2
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_p3r2g")
+lock_rotation = true
+linear_damp = 2.44
+script = ExtResource("1_ouqvi")
+force = 3.0
+rotation_speed = 6.0
+route_placer = NodePath("RoutePlacer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_yqwsl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_rbwwo")
+
+[node name="RoutePlacer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+script = ExtResource("2_8wexm")
+route_prefab = ExtResource("3_2yfl1")
+intervalDistance = 0.3

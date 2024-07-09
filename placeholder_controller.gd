@@ -1,7 +1,9 @@
+class_name vehicle_controller
 extends RigidBody3D
 
 @export var force : float
 @export var rotation_speed : float
+@export var route_placer : route_placer
 
 func _physics_process(delta):
 	var input = Vector2(Input.get_axis("control_left", "control_right"), Input.get_axis("control_up", "control_down"))
