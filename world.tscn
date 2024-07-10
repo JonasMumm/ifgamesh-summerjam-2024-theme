@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cmmtcjsrqqnpv"]
+[gd_scene load_steps=25 format=3 uid="uid://cmmtcjsrqqnpv"]
 
 [ext_resource type="ArrayMesh" uid="uid://c8cuqjitg2g6h" path="res://D3D/IslesBase.res" id="1_d08te"]
 [ext_resource type="Script" path="res://game_controller.gd" id="1_dl7jx"]
@@ -111,7 +111,13 @@ _data = {
 "new_objective": SubResource("Animation_ewm37")
 }
 
-[node name="World" type="Node3D" node_paths=PackedStringArray("checkpoints", "vehicle_spawners", "default_spawner", "cam", "route_container", "compass", "final_cam_position", "route_marker_scaler", "snap_scaler", "snaps")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_a6irm"]
+size = Vector3(22.6877, 1, 21.0998)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_og6xq"]
+size = Vector3(5.60449, 1, 0.505371)
+
+[node name="World" type="Node3D" node_paths=PackedStringArray("checkpoints", "vehicle_spawners", "default_spawner", "cam", "route_container", "compass", "final_cam_position", "route_marker_scaler", "snap_scaler", "snaps", "route_marker_area", "route_marker_switchover_area")]
 script = ExtResource("1_dl7jx")
 checkpoints = [NodePath("Checkpoints/checkpointT1"), NodePath("Checkpoints/checkpointT2"), NodePath("Checkpoints/checkpointR1"), NodePath("Checkpoints/checkpointR2"), NodePath("Checkpoints/checkpointR3"), NodePath("Checkpoints/checkpointI1"), NodePath("Checkpoints/checkpointI2"), NodePath("Checkpoints/checkpointI3"), NodePath("Checkpoints/checkpointI4"), NodePath("Checkpoints/checkpointP1"), NodePath("Checkpoints/checkpointP2"), NodePath("Checkpoints/checkpointP3"), NodePath("Checkpoints/checkpointP4"), NodePath("Checkpoints/checkpointP5")]
 vehicle_spawners = [NodePath("VehicleSpawners/vehicle_spawnerTCar"), NodePath("VehicleSpawners/vehicle_spawnerTBoat"), NodePath("VehicleSpawners/vehicle_spawnerRCar"), NodePath("VehicleSpawners/vehicle_spawnerRBoat"), NodePath("VehicleSpawners/vehicle_spawnerICar1"), NodePath("VehicleSpawners/vehicle_spawnerIBoat1"), NodePath("VehicleSpawners/vehicle_spawnerICar2"), NodePath("VehicleSpawners/vehicle_spawnerIBoat2"), NodePath("VehicleSpawners/vehicle_spawnerPCar")]
@@ -125,6 +131,8 @@ final_cam_damping_factor = 0.2
 route_marker_scaler = NodePath("CamDistScalers/routeMarkerScaler")
 snap_scaler = NodePath("CamDistScalers/snapScaler")
 snaps = [NodePath("Snaps/Snap1"), NodePath("Snaps/Snap2"), NodePath("Snaps/Snap3")]
+route_marker_area = NodePath("RouteMarkerArea")
+route_marker_switchover_area = NodePath("RouteMarkerFailsafeSwitchoverTrigger")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_uay2i")
@@ -313,6 +321,23 @@ transform = Transform3D(1.26541, 0, 0.326809, 0, 1.30693, 0, -0.326809, 0, 1.265
 
 [node name="Snap3" parent="Snaps" instance=ExtResource("12_yrh4e")]
 transform = Transform3D(1.2452, 0, -0.396915, 0, 1.30693, 0, 0.396915, 0, 1.2452, 22.0687, 0.158943, 1.72509)
+
+[node name="RouteMarkerArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RouteMarkerArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.97469, 0, 2.57666)
+shape = SubResource("BoxShape3D_a6irm")
+
+[node name="RouteMarkerFailsafeSwitchoverTrigger" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23518, 0, 4.42473)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RouteMarkerFailsafeSwitchoverTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.696777, 0, 0.247314)
+shape = SubResource("BoxShape3D_og6xq")
 
 [connection signal="vehicle_entered" from="Checkpoints/checkpointT1" to="Snaps/Snap1" method="_on_checkpoint_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointT2" to="VehicleSpawners/vehicle_spawnerTBoat" method="_on_checkpoint_vehicle_entered"]

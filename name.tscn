@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi64d6viy0w10"]
+
+[ext_resource type="PackedScene" uid="uid://chrv1kjp5lhns" path="res://route_markerSIMPLE.tscn" id="1_1cswl"]
+
+[node name="RouteContainer" type="Node3D"]
+
+[node name="RouteMarker" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.0199963, 0.0841386, -0.996253, 0, 0.996453, 0.0841554, 0.9998, 0.0016828, -0.0199254, -2.37755, 0.168062, -1.38555)
+
+[node name="@Node3D@2" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.222833, 0.0419196, -0.973955, 0, 0.999075, 0.0430008, 0.974857, 0.00958199, -0.222627, -2.06864, 0.141968, -1.37937)
+
+[node name="@Node3D@3" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.514728, 0, -0.857353, 0, 1, 0, 0.857353, 0, -0.514728, -1.78653, 0.141968, -1.25045)
+
+[node name="@Node3D@4" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.635202, 0, -0.772346, 0, 1, 0, 0.772346, 0, -0.635202, -1.53451, 0.141968, -1.0587)
+
+[node name="@Node3D@5" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.672008, 0, -0.740544, 0, 1, 0, 0.740544, 0, -0.672008, -1.29723, 0.141968, -0.848043)
+
+[node name="@Node3D@6" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.550439, -0.00947977, -0.834822, 0, 0.999936, -0.0113547, 0.834876, -0.00625007, -0.550403, -1.07258, 0.141968, -0.639515)
+
+[node name="@Node3D@7" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.474566, -0.00800791, -0.880183, 0, 0.999959, -0.00909762, 0.88022, -0.00431742, -0.474546, -0.793132, 0.148824, -0.515685)
+
+[node name="@Node3D@8" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.709374, 0.001585, -0.704831, 0, 0.999997, 0.00224877, 0.704832, 0.00159522, -0.709372, -0.539436, 0.147479, -0.352073)
+
+[node name="@Node3D@9" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.921072, -0.00152562, -0.38939, 0, 0.999992, -0.00391795, 0.389393, -0.00360871, -0.921065, -0.371295, 0.147479, -0.0911306)
+
+[node name="@Node3D@10" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.996568, -0.000282268, -0.082773, 0, 0.999994, -0.00341012, 0.0827734, -0.00339842, -0.996563, -0.303502, 0.149852, 0.206005)
+
+[node name="@Node3D@11" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.999997, 4.07184e-06, 0.00251856, 0, 0.999999, -0.00161673, -0.00251856, -0.00161672, -0.999996, -0.320831, 0.149558, 0.516449)
+
+[node name="@Node3D@12" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.970901, -0.000638845, -0.239481, 0, 0.999996, -0.00266762, 0.239481, -0.00258999, -0.970897, -0.305067, 0.150857, 0.827403)
+
+[node name="@Node3D@13" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.935736, -0.000185497, -0.3527, 0, 1, -0.000525933, 0.3527, -0.000492134, -0.935736, -0.175356, 0.151178, 1.10623)
+
+[node name="@Node3D@14" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.97892, 0, -0.204243, 0, 1, 0, 0.204243, 0, -0.97892, -0.089798, 0.151178, 1.39853)
+
+[node name="@Node3D@15" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.995369, 0, -0.0961259, 0, 1, 0, 0.0961259, 0, -0.995369, -0.0487854, 0.151178, 1.71287)
+
+[node name="@Node3D@16" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.998946, 0, -0.0459013, 0, 1, 0, 0.0459013, 0, -0.998946, -0.0299253, 0.151178, 2.0185)
+
+[node name="@Node3D@17" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.997628, 0, -0.0688374, 0, 1, 0, 0.0688374, 0, -0.997628, -0.0204842, 0.151178, 2.32879)
+
+[node name="@Node3D@18" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.986335, 0, -0.16475, 0, 1, 0, 0.16475, 0, -0.986335, 0.0124605, 0.151178, 2.63278)
+
+[node name="@Node3D@19" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.985979, 0, -0.16687, 0, 1, 0, 0.16687, 0, -0.985979, 0.079345, 0.151178, 2.92645)
+
+[node name="@Node3D@20" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.996502, 0, -0.0835691, 0, 1, 0, 0.0835691, 0, -0.996502, 0.113648, 0.151178, 3.23066)
+
+[node name="@Node3D@21" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.999143, 0, -0.0413992, 0, 1, 0, 0.0413992, 0, -0.999143, 0.130819, 0.151178, 3.54024)
+
+[node name="@Node3D@22" parent="." instance=ExtResource("1_1cswl")]
+transform = Transform3D(-0.999788, 0, -0.020605, 0, 1, 0, 0.020605, 0, -0.999788, 0.139415, 0.151178, 3.85251)

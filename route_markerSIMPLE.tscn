@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://chrv1kjp5lhns"]
+[gd_scene load_steps=7 format=3 uid="uid://chrv1kjp5lhns"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxk8x"]
 albedo_color = Color(0, 0, 0, 1)
@@ -37,6 +37,9 @@ _data = {
 "scale_up": SubResource("Animation_d24gj")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_5oi7h"]
+radius = 0.0562428
+
 [node name="RouteMarker" type="Node3D"]
 
 [node name="Visual" type="MeshInstance3D" parent="."]
@@ -48,3 +51,10 @@ libraries = {
 "": SubResource("AnimationLibrary_wpier")
 }
 autoplay = "scale_up"
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_5oi7h")

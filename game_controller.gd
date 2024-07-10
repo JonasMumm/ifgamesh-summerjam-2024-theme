@@ -1,5 +1,7 @@
 extends Node3D
 
+const default_route_path = "res://default_route.tscn"
+
 @export var checkpoints : Array[checkpoint]
 @export var vehicle_spawners : Array[vehicle_spawner]
 @export var default_spawner: vehicle_spawner
@@ -12,6 +14,8 @@ extends Node3D
 @export var route_marker_scaler : cam_distance_scaler
 @export var snap_scaler : cam_distance_scaler
 @export var snaps : Array[snap]
+@export var route_marker_area : Area3D
+@export var route_marker_switchover_area : Area3D
 
 var vehicle : vehicle_controller
 
@@ -31,6 +35,9 @@ func _ready():
 	ActivateNextCheckpoints()
 	
 	default_spawner.SpawnVehicle()
+	
+	route_marker_switchover_area.body_entered.connect(OnSwitchoverAreaEnter)
+
 		
 func OnCheckpointEntered(point : checkpoint, v:vehicle_controller):
 	while checkpoints.size() > 0:
@@ -80,3 +87,30 @@ func OnVehicleSpawned(v : vehicle_controller):
 
 func OnRouteMarkerPlaced(v:Node3D):
 	route_marker_scaler.add(v)
+	
+func OnSwitchoverAreaEnter(b : Node3D):
+	route_marker_switchover_area.body_entered.disconnect(OnSwitchoverAreaEnter)
+	
+	if !ResourceLoader.exists(default_route_path):
+		for v in route_marker_area.get_overlapping_areas():
+			v.get_parent().owner = route_container
+	
+		var scene := PackedScene.new()
+		var result := scene.pack(route_container)
+		print("CONNECTTTT "+str(result))
+		if result == OK:
+			var error := ResourceSaver.save(scene, default_route_path)
+			if error != OK:
+				push_error("An error occurred while saving the scene to disk.")
+
+	for v in route_marker_area.get_overlapping_areas():
+		route_marker_scaler.remove(v.get_parent())
+		v.get_parent().queue_free()
+	
+	var default_instance := load(default_route_path).instantiate() as Node3D
+	default_instance.name += "instanced"
+	route_container.get_parent().add_child(default_instance)
+	
+	for v in default_instance.get_children():
+		OnRouteMarkerPlaced(v as Node3D)
+	
