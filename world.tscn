@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cmmtcjsrqqnpv"]
+[gd_scene load_steps=21 format=3 uid="uid://cmmtcjsrqqnpv"]
 
 [ext_resource type="ArrayMesh" uid="uid://c8cuqjitg2g6h" path="res://D3D/IslesBase.res" id="1_d08te"]
 [ext_resource type="Script" path="res://game_controller.gd" id="1_dl7jx"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://vehicle_spawner.gd" id="7_fxvc6"]
 [ext_resource type="PackedScene" uid="uid://b0tjbq86642kt" path="res://checkpoint.tscn" id="8_6f0r6"]
 [ext_resource type="PackedScene" uid="uid://c0pssokiknx7u" path="res://boat.tscn" id="8_dpfx6"]
+[ext_resource type="PackedScene" uid="uid://cvskt3ncdaglc" path="res://D3D/compassArrow.blend" id="9_doocl"]
+[ext_resource type="Script" path="res://compass.gd" id="9_go6ta"]
 
 [sub_resource type="Environment" id="Environment_uay2i"]
 ambient_light_source = 2
@@ -33,13 +35,88 @@ emission = Color(0.25098, 0.643137, 0.890196, 1)
 material = SubResource("StandardMaterial3D_hsten")
 size = Vector2(900, 900)
 
-[node name="World" type="Node3D" node_paths=PackedStringArray("checkpoints", "vehicle_spawners", "default_spawner", "cam", "route_container")]
+[sub_resource type="Animation" id="Animation_ewm37"]
+resource_name = "new_objective"
+length = 1.8
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualOffset:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VisualOffset:position:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.518, -0.25, 0, 0.2, 0.223742, -0.204, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(1.2, 1.8)
+}
+tracks/2/type = "scale_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VisualOffset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(1.2, 1, 1, 1, 0.1, 1.4, 1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_f1asw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualOffset:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VisualOffset:position:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "scale_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VisualOffset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_emsdw"]
+_data = {
+"RESET": SubResource("Animation_f1asw"),
+"new_objective": SubResource("Animation_ewm37")
+}
+
+[node name="World" type="Node3D" node_paths=PackedStringArray("checkpoints", "vehicle_spawners", "default_spawner", "cam", "route_container", "compass")]
 script = ExtResource("1_dl7jx")
 checkpoints = [NodePath("checkpoint"), NodePath("checkpoint2"), NodePath("checkpoint3")]
 vehicle_spawners = [NodePath("VehicleSpawners/vehicle_spawnerStart"), NodePath("VehicleSpawners/vehicle_spawnerBoat1")]
 default_spawner = NodePath("VehicleSpawners/vehicle_spawnerStart")
 cam = NodePath("CameraController")
 route_container = NodePath("RouteContainer")
+compass = NodePath("Compass")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_uay2i")
@@ -110,5 +187,20 @@ vehicle_prefab = ExtResource("4_cnd1l")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.384887, 0.0436236, 6.89141)
 script = ExtResource("7_fxvc6")
 vehicle_prefab = ExtResource("8_dpfx6")
+
+[node name="Compass" type="Node3D" parent="." node_paths=PackedStringArray("animation_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374279, 0.179392, 0.207992)
+script = ExtResource("9_go6ta")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="VisualOffset" type="Node3D" parent="Compass"]
+
+[node name="compassArrow" type="Node3D" parent="Compass/VisualOffset" instance=ExtResource("9_doocl")]
+transform = Transform3D(0.133428, 0, 0, 0, 0.133428, 0, 0, 0, 0.133428, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Compass"]
+libraries = {
+"": SubResource("AnimationLibrary_emsdw")
+}
 
 [connection signal="vehicle_entered" from="checkpoint3" to="VehicleSpawners/vehicle_spawnerBoat1" method="_on_checkpoint_vehicle_entered"]

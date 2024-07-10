@@ -5,6 +5,7 @@ extends Node3D
 @export var default_spawner: vehicle_spawner
 @export var cam : camera_controller
 @export var route_container : Node3D
+@export var compass : compass
 
 var vehicle : vehicle_controller
 
@@ -40,8 +41,16 @@ func ActivateNextCheckpoints():
 		
 		if c.mandatory:
 			break
+			
+	if checkpoints.size() > 0:
+		compass.SetTarget(checkpoints[0])
+	else:
+		compass.visible = false
+		compass.process_mode = Node.PROCESS_MODE_DISABLED
 
 func OnVehicleSpawned(v : vehicle_controller):
+	
+	compass.SetOwner(v)
 	
 	if vehicle != null:
 		vehicle.route_placer.Place()

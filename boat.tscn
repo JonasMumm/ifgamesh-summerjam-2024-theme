@@ -15,7 +15,6 @@ radius = 0.1
 height = 0.2
 
 [node name="Boat" type="RigidBody3D" node_paths=PackedStringArray("route_placer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23573, 0.593467, 0.672035)
 collision_layer = 2
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_p3r2g")
