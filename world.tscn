@@ -112,9 +112,9 @@ _data = {
 
 [node name="World" type="Node3D" node_paths=PackedStringArray("checkpoints", "vehicle_spawners", "default_spawner", "cam", "route_container", "compass", "final_cam_position", "route_marker_scaler")]
 script = ExtResource("1_dl7jx")
-checkpoints = [NodePath("Checkpoints/checkpoint"), NodePath("Checkpoints/checkpoint2"), NodePath("Checkpoints/checkpoint3")]
-vehicle_spawners = [NodePath("VehicleSpawners/vehicle_spawnerStart"), NodePath("VehicleSpawners/vehicle_spawnerBoat1")]
-default_spawner = NodePath("VehicleSpawners/vehicle_spawnerStart")
+checkpoints = [NodePath("Checkpoints/checkpointT1"), NodePath("Checkpoints/checkpointT2"), NodePath("Checkpoints/checkpointR1"), NodePath("Checkpoints/checkpointR2"), NodePath("Checkpoints/checkpointR3"), NodePath("Checkpoints/checkpointI1"), NodePath("Checkpoints/checkpointI2"), NodePath("Checkpoints/checkpointI3"), NodePath("Checkpoints/checkpointI4"), NodePath("Checkpoints/checkpointP1"), NodePath("Checkpoints/checkpointP2"), NodePath("Checkpoints/checkpointP3"), NodePath("Checkpoints/checkpointP4"), NodePath("Checkpoints/checkpointP5")]
+vehicle_spawners = [NodePath("VehicleSpawners/vehicle_spawnerTCar"), NodePath("VehicleSpawners/vehicle_spawnerTBoat"), NodePath("VehicleSpawners/vehicle_spawnerRCar"), NodePath("VehicleSpawners/vehicle_spawnerRBoat"), NodePath("VehicleSpawners/vehicle_spawnerICar1"), NodePath("VehicleSpawners/vehicle_spawnerIBoat1"), NodePath("VehicleSpawners/vehicle_spawnerICar2"), NodePath("VehicleSpawners/vehicle_spawnerIBoat2"), NodePath("VehicleSpawners/vehicle_spawnerPCar")]
+default_spawner = NodePath("VehicleSpawners/vehicle_spawnerTCar")
 cam = NodePath("CameraController")
 route_container = NodePath("RouteContainer")
 compass = NodePath("Compass")
@@ -172,15 +172,50 @@ fov = 20.0
 
 [node name="VehicleSpawners" type="Node3D" parent="."]
 
-[node name="vehicle_spawnerStart" type="Node3D" parent="VehicleSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.662708, 0.268062, 0.556108)
+[node name="vehicle_spawnerTCar" type="Node3D" parent="VehicleSpawners"]
+transform = Transform3D(0.141385, 0, -0.989955, 0, 1, 0, 0.989955, 0, 0.141385, -2.37755, 0.268062, -1.38555)
 script = ExtResource("7_fxvc6")
 vehicle_prefab = ExtResource("4_cnd1l")
 
-[node name="vehicle_spawnerBoat1" type="Node3D" parent="VehicleSpawners"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.384887, 0.0436236, 6.89141)
+[node name="vehicle_spawnerTBoat" type="Node3D" parent="VehicleSpawners"]
+transform = Transform3D(-0.982958, 0, -0.183831, 0, 1, 0, 0.183831, 0, -0.982958, 1.065, 0.08, 7.093)
 script = ExtResource("7_fxvc6")
 vehicle_prefab = ExtResource("8_dpfx6")
+
+[node name="vehicle_spawnerRCar" type="Node3D" parent="VehicleSpawners"]
+transform = Transform3D(0.637451, 0, -0.770491, 0, 1, 0, 0.770491, 0, 0.637451, 7.78664, 0.268062, 6.35998)
+script = ExtResource("7_fxvc6")
+vehicle_prefab = ExtResource("4_cnd1l")
+
+[node name="vehicle_spawnerRBoat" type="Node3D" parent="VehicleSpawners"]
+transform = Transform3D(0.110047, 0, -0.993926, 0, 1, 0, 0.993926, 0, 0.110047, 11.2821, 0.08, 0.0707613)
+script = ExtResource("7_fxvc6")
+vehicle_prefab = ExtResource("8_dpfx6")
+
+[node name="vehicle_spawnerICar1" type="Node3D" parent="VehicleSpawners"]
+transform = Transform3D(-0.0466184, 0, -0.998913, 0, 1, 0, 0.998913, 0, -0.0466184, 13.5635, 0.268062, -1.80614)
+script = ExtResource("7_fxvc6")
+vehicle_prefab = ExtResource("4_cnd1l")
+
+[node name="vehicle_spawnerIBoat1" type="Node3D" parent="VehicleSpawners"]
+transform = Transform3D(-0.987189, 0, -0.159554, 0, 1, 0, 0.159554, 0, -0.987189, 14.451, 0.08, -0.812806)
+script = ExtResource("7_fxvc6")
+vehicle_prefab = ExtResource("8_dpfx6")
+
+[node name="vehicle_spawnerICar2" type="Node3D" parent="VehicleSpawners"]
+transform = Transform3D(-0.953607, 0, 0.301055, 0, 1, 0, -0.301055, 0, -0.953607, 14.3701, 0.268062, 0.106072)
+script = ExtResource("7_fxvc6")
+vehicle_prefab = ExtResource("4_cnd1l")
+
+[node name="vehicle_spawnerIBoat2" type="Node3D" parent="VehicleSpawners"]
+transform = Transform3D(-0.666506, 0, -0.745499, 0, 1, 0, 0.745499, 0, -0.666506, 14.5552, 0.0800001, 7.14342)
+script = ExtResource("7_fxvc6")
+vehicle_prefab = ExtResource("8_dpfx6")
+
+[node name="vehicle_spawnerPCar" type="Node3D" parent="VehicleSpawners"]
+transform = Transform3D(0.0489717, 0, -0.9988, 0, 1, 0, 0.9988, 0, 0.0489717, 19.2959, 0.268062, 6.14742)
+script = ExtResource("7_fxvc6")
+vehicle_prefab = ExtResource("4_cnd1l")
 
 [node name="Compass" type="Node3D" parent="." node_paths=PackedStringArray("animation_player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374279, 0.179392, 0.207992)
@@ -199,15 +234,49 @@ libraries = {
 
 [node name="Checkpoints" type="Node3D" parent="."]
 
-[node name="checkpoint" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53252, 0.176153, 6.80058)
+[node name="checkpointT1" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.82563, 0.154038, -0.327354)
 
-[node name="checkpoint2" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55628, 0.154038, 6.182)
+[node name="checkpointT2" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19609, 0.154038, 6.56867)
+
+[node name="checkpointR1" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.42434, 0.019951, 6.59093)
+
+[node name="checkpointR2" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.03717, 0.154038, -0.950716)
+
+[node name="checkpointR3" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8448, 0.154038, 0.0665445)
+
+[node name="checkpointI1" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1489, 0.019951, -1.7942)
+
+[node name="checkpointI2" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4382, 0.154039, -1.11787)
+
+[node name="checkpointI3" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.512, 0.019951, -0.156157)
+
+[node name="checkpointI4" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4302, 0.154039, 6.68722)
+
+[node name="checkpointP1" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9482, 0.019951, 6.14399)
+
+[node name="checkpointP2" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(2.3634, 0, 0, 0, 2.3634, 0, 0, 0, 2.3634, 22.0521, 0.154039, 5.31845)
 mandatory = false
 
-[node name="checkpoint3" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.649747, 0.154038, 6.20234)
+[node name="checkpointP3" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2225, 0.154039, 2.12795)
+
+[node name="checkpointP4" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(3.30349, 0, 0, 0, 3.30349, 0, 0, 0, 3.30349, 19.335, 0.154039, 3.53954)
+mandatory = false
+
+[node name="checkpointP5" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0105, 0.154039, 10.5685)
 
 [node name="FinalCamPos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8997, 0, 3.03464)
@@ -222,4 +291,11 @@ scaleClose = Vector3(1, 1, 1)
 distFar = 60.0
 scaleFar = Vector3(5, 1, 1)
 
-[connection signal="vehicle_entered" from="Checkpoints/checkpoint3" to="VehicleSpawners/vehicle_spawnerBoat1" method="_on_checkpoint_vehicle_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointT2" to="VehicleSpawners/vehicle_spawnerTBoat" method="_on_checkpoint_vehicle_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointR1" to="VehicleSpawners/vehicle_spawnerRCar" method="_on_checkpoint_vehicle_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointR3" to="VehicleSpawners/vehicle_spawnerRBoat" method="_on_checkpoint_vehicle_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointI1" to="VehicleSpawners/vehicle_spawnerICar1" method="_on_checkpoint_vehicle_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointI2" to="VehicleSpawners/vehicle_spawnerIBoat1" method="_on_checkpoint_vehicle_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointI3" to="VehicleSpawners/vehicle_spawnerICar2" method="_on_checkpoint_vehicle_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointI4" to="VehicleSpawners/vehicle_spawnerIBoat2" method="_on_checkpoint_vehicle_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointP1" to="VehicleSpawners/vehicle_spawnerPCar" method="_on_checkpoint_vehicle_entered"]
