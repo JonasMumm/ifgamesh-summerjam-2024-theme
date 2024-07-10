@@ -3,6 +3,21 @@
 [ext_resource type="Script" path="res://checkpoint.gd" id="1_1khwv"]
 [ext_resource type="PackedScene" uid="uid://dyiylgu65g087" path="res://D3D/checkpoint.blend" id="2_3mnen"]
 
+[sub_resource type="Animation" id="Animation_6kc8j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_r10aj"]
 resource_name = "rotate"
 length = 8.0
@@ -20,21 +35,6 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_6kc8j"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y55i7"]
 _data = {
 "RESET": SubResource("Animation_6kc8j"),
@@ -42,17 +42,16 @@ _data = {
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_117o1"]
-radius = 0.05
+radius = 0.152245
 
 [node name="checkpoint" type="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68208, 0.154038, 6.90387)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_1khwv")
 mandatory = true
 
 [node name="checkpoint" parent="." instance=ExtResource("2_3mnen")]
-transform = Transform3D(-0.00627878, 0, -0.0596706, 0, 0.06, 0, 0.0596706, 0, -0.00627878, 0, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="checkpoint"]
 libraries = {

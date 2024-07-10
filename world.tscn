@@ -35,6 +35,39 @@ emission = Color(0.25098, 0.643137, 0.890196, 1)
 material = SubResource("StandardMaterial3D_hsten")
 size = Vector2(900, 900)
 
+[sub_resource type="Animation" id="Animation_f1asw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualOffset:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VisualOffset:position:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "scale_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VisualOffset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+
 [sub_resource type="Animation" id="Animation_ewm37"]
 resource_name = "new_objective"
 length = 1.8
@@ -70,39 +103,6 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = PackedFloat32Array(1.2, 1, 1, 1, 0.1, 1.4, 1, 1, 1, 1)
 
-[sub_resource type="Animation" id="Animation_f1asw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VisualOffset:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("VisualOffset:position:z")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "scale_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("VisualOffset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_emsdw"]
 _data = {
 "RESET": SubResource("Animation_f1asw"),
@@ -111,7 +111,7 @@ _data = {
 
 [node name="World" type="Node3D" node_paths=PackedStringArray("checkpoints", "vehicle_spawners", "default_spawner", "cam", "route_container", "compass")]
 script = ExtResource("1_dl7jx")
-checkpoints = [NodePath("checkpoint"), NodePath("checkpoint2"), NodePath("checkpoint3")]
+checkpoints = [NodePath("Checkpoints/checkpoint"), NodePath("Checkpoints/checkpoint2"), NodePath("Checkpoints/checkpoint3")]
 vehicle_spawners = [NodePath("VehicleSpawners/vehicle_spawnerStart"), NodePath("VehicleSpawners/vehicle_spawnerBoat1")]
 default_spawner = NodePath("VehicleSpawners/vehicle_spawnerStart")
 cam = NodePath("CameraController")
@@ -124,8 +124,6 @@ environment = SubResource("Environment_uay2i")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.945301, 0.260082, -0.196882, 0.00716554, 0.586864, 0.809654, 0.32612, -0.766777, 0.5529, 0, 3.56036, 0)
 light_color = Color(1, 0.8505, 0.61, 1)
-
-[node name="WorldMesh" type="MeshInstance3D" parent="."]
 
 [node name="IsleFloor" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_jf5w6")
@@ -167,15 +165,6 @@ fov = 20.0
 
 [node name="RouteContainer" type="Node3D" parent="."]
 
-[node name="checkpoint" parent="." instance=ExtResource("8_6f0r6")]
-
-[node name="checkpoint2" parent="." instance=ExtResource("8_6f0r6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55628, 0.154038, 6.182)
-mandatory = false
-
-[node name="checkpoint3" parent="." instance=ExtResource("8_6f0r6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.649747, 0.154038, 6.20234)
-
 [node name="VehicleSpawners" type="Node3D" parent="."]
 
 [node name="vehicle_spawnerStart" type="Node3D" parent="VehicleSpawners"]
@@ -195,7 +184,7 @@ animation_player = NodePath("AnimationPlayer")
 
 [node name="VisualOffset" type="Node3D" parent="Compass"]
 
-[node name="compassArrow" type="Node3D" parent="Compass/VisualOffset" instance=ExtResource("9_doocl")]
+[node name="compassArrow" parent="Compass/VisualOffset" instance=ExtResource("9_doocl")]
 transform = Transform3D(0.133428, 0, 0, 0, 0.133428, 0, 0, 0, 0.133428, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Compass"]
@@ -203,4 +192,16 @@ libraries = {
 "": SubResource("AnimationLibrary_emsdw")
 }
 
-[connection signal="vehicle_entered" from="checkpoint3" to="VehicleSpawners/vehicle_spawnerBoat1" method="_on_checkpoint_vehicle_entered"]
+[node name="Checkpoints" type="Node3D" parent="."]
+
+[node name="checkpoint" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53252, 0.176153, 6.80058)
+
+[node name="checkpoint2" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55628, 0.154038, 6.182)
+mandatory = false
+
+[node name="checkpoint3" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.649747, 0.154038, 6.20234)
+
+[connection signal="vehicle_entered" from="Checkpoints/checkpoint3" to="VehicleSpawners/vehicle_spawnerBoat1" method="_on_checkpoint_vehicle_entered"]
