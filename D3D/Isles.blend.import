@@ -32,6 +32,12 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
+"materials": {
+"2Isle": {
+"use_external/enabled": true,
+"use_external/path": "res://D3D/world_material.tres"
+}
+},
 "meshes": {
 "Isles_IsleBase": {
 "generate/lightmap_uv": 0,
