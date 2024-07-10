@@ -24,6 +24,5 @@ func apply_scale(v:Node3D, cam_dist:float):
 	v.scale = scl
 
 func on_cam_distance_changed(dist:float):
-	print("CHANGED " + str(dist))
 	for i in targets:
 		apply_scale(i, dist)
