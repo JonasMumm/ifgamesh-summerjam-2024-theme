@@ -10,6 +10,8 @@ extends Node3D
 @export var final_cam_distance : float
 @export var final_cam_damping_factor : float
 @export var route_marker_scaler : cam_distance_scaler
+@export var snap_scaler : cam_distance_scaler
+@export var snaps : Array[snap]
 
 var vehicle : vehicle_controller
 
@@ -21,6 +23,10 @@ func _ready():
 		
 	for v in vehicle_spawners:
 		v.vehicle_spawned.connect(OnVehicleSpawned)
+		
+	for v in snaps:
+		v.disappear()
+		snap_scaler.add(v)
 	
 	ActivateNextCheckpoints()
 	

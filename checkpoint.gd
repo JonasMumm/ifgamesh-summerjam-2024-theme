@@ -11,8 +11,8 @@ func _ready():
 	body_entered.connect(OnBodyEntered)
 	
 	if !mandatory:
-		pass
-		#visual.process_mode = Node.PROCESS_MODE_DISABLED
+		visual.process_mode = Node.PROCESS_MODE_DISABLED
+		visible = false
 
 func OnBodyEntered(body: Node3D):
 	vehicle_entered.emit(self, body as vehicle_controller)

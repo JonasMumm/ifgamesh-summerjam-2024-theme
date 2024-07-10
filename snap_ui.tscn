@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5hpkdakth8at"]
+
+[ext_resource type="Texture2D" uid="uid://c4g5v535d1heq" path="res://icon.svg" id="1_sg8op"]
+
+[node name="SnapUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -580.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_sg8op")

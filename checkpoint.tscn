@@ -44,11 +44,12 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_117o1"]
 radius = 0.152245
 
-[node name="checkpoint" type="Area3D"]
+[node name="checkpoint" type="Area3D" node_paths=PackedStringArray("visual")]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_1khwv")
 mandatory = true
+visual = NodePath("checkpoint")
 
 [node name="checkpoint" parent="." instance=ExtResource("2_3mnen")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

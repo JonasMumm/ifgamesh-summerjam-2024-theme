@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://ct5upnqs7cwe0"]
+
+[ext_resource type="Script" path="res://snap.gd" id="1_tkf4s"]
+[ext_resource type="PackedScene" uid="uid://b5hpkdakth8at" path="res://snap_ui.tscn" id="2_6q37s"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_5ws8n"]
+size = Vector2(0.5, 0.6)
+orientation = 1
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qe0mm"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqbg8"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_qe0mm")
+
+[sub_resource type="Animation" id="Animation_gvlcb"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Quad:rotation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Quad:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "scale_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Quad")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_d4ar4"]
+resource_name = "appear"
+length = 0.7
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Quad:rotation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.3, 0.273247, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.666667)
+}
+tracks/1/type = "scale_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Quad")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.666667, 1, 1, 1, 1)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Quad:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.383471, 0, -0.288157), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dt0hj"]
+_data = {
+"RESET": SubResource("Animation_gvlcb"),
+"appear": SubResource("Animation_d4ar4")
+}
+
+[node name="Snap" type="Node3D" node_paths=PackedStringArray("animation_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22732, 0)
+script = ExtResource("1_tkf4s")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(500, 600)
+
+[node name="SnapUi" parent="SubViewport" instance=ExtResource("2_6q37s")]
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="Quad" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_5ws8n")
+surface_material_override/0 = SubResource("StandardMaterial3D_gqbg8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dt0hj")
+}
+autoplay = "appear"

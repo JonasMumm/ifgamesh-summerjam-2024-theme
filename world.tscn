@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cmmtcjsrqqnpv"]
+[gd_scene load_steps=23 format=3 uid="uid://cmmtcjsrqqnpv"]
 
 [ext_resource type="ArrayMesh" uid="uid://c8cuqjitg2g6h" path="res://D3D/IslesBase.res" id="1_d08te"]
 [ext_resource type="Script" path="res://game_controller.gd" id="1_dl7jx"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cvskt3ncdaglc" path="res://D3D/compassArrow.blend" id="9_doocl"]
 [ext_resource type="Script" path="res://compass.gd" id="9_go6ta"]
 [ext_resource type="Script" path="res://cam_distance_scaler.gd" id="11_7wsfx"]
+[ext_resource type="PackedScene" uid="uid://ct5upnqs7cwe0" path="res://snap.tscn" id="12_yrh4e"]
 
 [sub_resource type="Environment" id="Environment_uay2i"]
 ambient_light_source = 2
@@ -110,7 +111,7 @@ _data = {
 "new_objective": SubResource("Animation_ewm37")
 }
 
-[node name="World" type="Node3D" node_paths=PackedStringArray("checkpoints", "vehicle_spawners", "default_spawner", "cam", "route_container", "compass", "final_cam_position", "route_marker_scaler")]
+[node name="World" type="Node3D" node_paths=PackedStringArray("checkpoints", "vehicle_spawners", "default_spawner", "cam", "route_container", "compass", "final_cam_position", "route_marker_scaler", "snap_scaler", "snaps")]
 script = ExtResource("1_dl7jx")
 checkpoints = [NodePath("Checkpoints/checkpointT1"), NodePath("Checkpoints/checkpointT2"), NodePath("Checkpoints/checkpointR1"), NodePath("Checkpoints/checkpointR2"), NodePath("Checkpoints/checkpointR3"), NodePath("Checkpoints/checkpointI1"), NodePath("Checkpoints/checkpointI2"), NodePath("Checkpoints/checkpointI3"), NodePath("Checkpoints/checkpointI4"), NodePath("Checkpoints/checkpointP1"), NodePath("Checkpoints/checkpointP2"), NodePath("Checkpoints/checkpointP3"), NodePath("Checkpoints/checkpointP4"), NodePath("Checkpoints/checkpointP5")]
 vehicle_spawners = [NodePath("VehicleSpawners/vehicle_spawnerTCar"), NodePath("VehicleSpawners/vehicle_spawnerTBoat"), NodePath("VehicleSpawners/vehicle_spawnerRCar"), NodePath("VehicleSpawners/vehicle_spawnerRBoat"), NodePath("VehicleSpawners/vehicle_spawnerICar1"), NodePath("VehicleSpawners/vehicle_spawnerIBoat1"), NodePath("VehicleSpawners/vehicle_spawnerICar2"), NodePath("VehicleSpawners/vehicle_spawnerIBoat2"), NodePath("VehicleSpawners/vehicle_spawnerPCar")]
@@ -122,6 +123,8 @@ final_cam_position = NodePath("FinalCamPos")
 final_cam_distance = 60.0
 final_cam_damping_factor = 0.2
 route_marker_scaler = NodePath("CamDistScalers/routeMarkerScaler")
+snap_scaler = NodePath("CamDistScalers/snapScaler")
+snaps = [NodePath("Snaps/Snap1"), NodePath("Snaps/Snap2"), NodePath("Snaps/Snap3")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_uay2i")
@@ -225,7 +228,7 @@ animation_player = NodePath("AnimationPlayer")
 [node name="VisualOffset" type="Node3D" parent="Compass"]
 
 [node name="compassArrow" parent="Compass/VisualOffset" instance=ExtResource("9_doocl")]
-transform = Transform3D(0.133428, 0, 0, 0, 0.133428, 0, 0, 0, 0.133428, 0, 0, 0)
+transform = Transform3D(0.078499, 0, 0, 0, 0.133428, 0, 0, 0, 0.106522, 0, 0, -0.0509004)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Compass"]
 libraries = {
@@ -291,11 +294,34 @@ scaleClose = Vector3(1, 1, 1)
 distFar = 60.0
 scaleFar = Vector3(5, 1, 1)
 
+[node name="snapScaler" type="Node" parent="CamDistScalers" node_paths=PackedStringArray("cam_controller")]
+script = ExtResource("11_7wsfx")
+cam_controller = NodePath("../../CameraController")
+distClose = 5.099
+scaleClose = Vector3(1, 1, 1)
+distFar = 60.0
+scaleFar = Vector3(2.6, 2.6, 2.6)
+
+[node name="Snaps" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57086, 0, 0)
+
+[node name="Snap1" parent="Snaps" instance=ExtResource("12_yrh4e")]
+transform = Transform3D(1.30693, 0, 0, 0, 1.30693, 0, 0, 0, 1.30693, 3.68169, 0.158943, -0.777146)
+
+[node name="Snap2" parent="Snaps" instance=ExtResource("12_yrh4e")]
+transform = Transform3D(1.26541, 0, 0.326809, 0, 1.30693, 0, -0.326809, 0, 1.26541, 7.90748, 0.158943, -1.85611)
+
+[node name="Snap3" parent="Snaps" instance=ExtResource("12_yrh4e")]
+transform = Transform3D(1.2452, 0, -0.396915, 0, 1.30693, 0, 0.396915, 0, 1.2452, 22.0687, 0.158943, 1.72509)
+
+[connection signal="vehicle_entered" from="Checkpoints/checkpointT1" to="Snaps/Snap1" method="_on_checkpoint_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointT2" to="VehicleSpawners/vehicle_spawnerTBoat" method="_on_checkpoint_vehicle_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointR1" to="VehicleSpawners/vehicle_spawnerRCar" method="_on_checkpoint_vehicle_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointR2" to="Snaps/Snap2" method="_on_checkpoint_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointR3" to="VehicleSpawners/vehicle_spawnerRBoat" method="_on_checkpoint_vehicle_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointI1" to="VehicleSpawners/vehicle_spawnerICar1" method="_on_checkpoint_vehicle_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointI2" to="VehicleSpawners/vehicle_spawnerIBoat1" method="_on_checkpoint_vehicle_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointI3" to="VehicleSpawners/vehicle_spawnerICar2" method="_on_checkpoint_vehicle_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointI4" to="VehicleSpawners/vehicle_spawnerIBoat2" method="_on_checkpoint_vehicle_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointP1" to="VehicleSpawners/vehicle_spawnerPCar" method="_on_checkpoint_vehicle_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointP3" to="Snaps/Snap3" method="_on_checkpoint_entered"]
