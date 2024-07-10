@@ -1,6 +1,8 @@
 class_name route_placer
 extends Node3D
 
+signal placed(marker:Node3D)
+
 @export var route_parent : Node
 @export var route_prefab : PackedScene
 @export var intervalDistance : float
@@ -27,4 +29,5 @@ func Place():
 	instance.owner = route_parent
 	prev_last_global_position = last_global_position
 	last_global_position = global_position
+	placed.emit(instance)
 	

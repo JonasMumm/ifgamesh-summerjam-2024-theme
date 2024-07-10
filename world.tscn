@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cmmtcjsrqqnpv"]
+[gd_scene load_steps=22 format=3 uid="uid://cmmtcjsrqqnpv"]
 
 [ext_resource type="ArrayMesh" uid="uid://c8cuqjitg2g6h" path="res://D3D/IslesBase.res" id="1_d08te"]
 [ext_resource type="Script" path="res://game_controller.gd" id="1_dl7jx"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c0pssokiknx7u" path="res://boat.tscn" id="8_dpfx6"]
 [ext_resource type="PackedScene" uid="uid://cvskt3ncdaglc" path="res://D3D/compassArrow.blend" id="9_doocl"]
 [ext_resource type="Script" path="res://compass.gd" id="9_go6ta"]
+[ext_resource type="Script" path="res://cam_distance_scaler.gd" id="11_7wsfx"]
 
 [sub_resource type="Environment" id="Environment_uay2i"]
 ambient_light_source = 2
@@ -109,7 +110,7 @@ _data = {
 "new_objective": SubResource("Animation_ewm37")
 }
 
-[node name="World" type="Node3D" node_paths=PackedStringArray("checkpoints", "vehicle_spawners", "default_spawner", "cam", "route_container", "compass")]
+[node name="World" type="Node3D" node_paths=PackedStringArray("checkpoints", "vehicle_spawners", "default_spawner", "cam", "route_container", "compass", "final_cam_position", "route_marker_scaler")]
 script = ExtResource("1_dl7jx")
 checkpoints = [NodePath("Checkpoints/checkpoint"), NodePath("Checkpoints/checkpoint2"), NodePath("Checkpoints/checkpoint3")]
 vehicle_spawners = [NodePath("VehicleSpawners/vehicle_spawnerStart"), NodePath("VehicleSpawners/vehicle_spawnerBoat1")]
@@ -117,6 +118,10 @@ default_spawner = NodePath("VehicleSpawners/vehicle_spawnerStart")
 cam = NodePath("CameraController")
 route_container = NodePath("RouteContainer")
 compass = NodePath("Compass")
+final_cam_position = NodePath("FinalCamPos")
+final_cam_distance = 60.0
+final_cam_damping_factor = 0.2
+route_marker_scaler = NodePath("CamDistScalers/routeMarkerScaler")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_uay2i")
@@ -203,5 +208,18 @@ mandatory = false
 
 [node name="checkpoint3" parent="Checkpoints" instance=ExtResource("8_6f0r6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.649747, 0.154038, 6.20234)
+
+[node name="FinalCamPos" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8997, 0, 3.03464)
+
+[node name="CamDistScalers" type="Node" parent="."]
+
+[node name="routeMarkerScaler" type="Node" parent="CamDistScalers" node_paths=PackedStringArray("cam_controller")]
+script = ExtResource("11_7wsfx")
+cam_controller = NodePath("../../CameraController")
+distClose = 5.099
+scaleClose = Vector3(1, 1, 1)
+distFar = 60.0
+scaleFar = Vector3(5, 1, 1)
 
 [connection signal="vehicle_entered" from="Checkpoints/checkpoint3" to="VehicleSpawners/vehicle_spawnerBoat1" method="_on_checkpoint_vehicle_entered"]
