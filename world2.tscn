@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://pwht7wptgeo2"]
+[gd_scene load_steps=46 format=4 uid="uid://pwht7wptgeo2"]
 
 [ext_resource type="Script" path="res://game_controller.gd" id="1_hxmck"]
 [ext_resource type="Material" uid="uid://g1l4vcxbw8o4" path="res://D3D/world_material.tres" id="2_ojf13"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bctiirss58fwx" path="res://D3D/vegetation_meshes/scenes/bush_1.tscn" id="15_u61gf"]
 [ext_resource type="Texture2D" uid="uid://yxy03xswvwjh" path="res://Textures/pngs/text/island.png" id="16_e6045"]
 [ext_resource type="PackedScene" uid="uid://kw6xdw5qa2ls" path="res://D3D/vegetation_meshes/scenes/rock.tscn" id="16_mmhs5"]
+[ext_resource type="Texture2D" uid="uid://bf3csfknc54kx" path="res://Textures/pngs/text/stolen.png" id="16_p3b5f"]
 [ext_resource type="PackedScene" uid="uid://byyuit1bwsgf7" path="res://D3D/vegetation_meshes/scenes/poptree.tscn" id="17_dowdd"]
 [ext_resource type="PackedScene" uid="uid://d1p00r0jk5un0" path="res://D3D/vegetation_meshes/scenes/palmtree.tscn" id="19_4qdgc"]
 
@@ -476,7 +477,7 @@ texture = ExtResource("15_4o5pm")
 
 [node name="Snap6" parent="Snaps" instance=ExtResource("12_oli2d")]
 transform = Transform3D(0.981145, 0, 0.193275, 0, 1, 0, -0.193275, 0, 0.981145, 11.9239, 0.208, 20.4293)
-texture = ExtResource("15_4o5pm")
+texture = ExtResource("16_p3b5f")
 
 [node name="Snap7" parent="Snaps" instance=ExtResource("12_oli2d")]
 transform = Transform3D(0.943419, 0, -0.331602, 0, 1, 0, 0.331602, 0, 0.943419, 24.1318, 0.208, 18.3357)
