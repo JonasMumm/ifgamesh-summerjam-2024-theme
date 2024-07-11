@@ -926,11 +926,11 @@ transform = Transform3D(1.9223, 0, 0, 0, 1.9223, 0, 0, 0, 1.9223, 11.6721, 0, 3.
 randomize_scale_range = 0.0
 
 [node name="Rock42" parent="Props/Land" instance=ExtResource("16_mmhs5")]
-transform = Transform3D(1.9223, 0, 0, 0, 1.9223, 0, 0, 0, 1.9223, 11.7153, 0, 4.08764)
+transform = Transform3D(1.9223, 0, 0, 0, 1.9223, 0, 0, 0, 1.9223, 11.6064, 0, 4.05252)
 randomize_scale_range = 0.0
 
 [node name="Rock43" parent="Props/Land" instance=ExtResource("16_mmhs5")]
-transform = Transform3D(1.9223, 0, 0, 0, 1.9223, 0, 0, 0, 1.9223, 12.791, 0, 4.35462)
+transform = Transform3D(1.9223, 0, 0, 0, 1.9223, 0, 0, 0, 1.9223, 12.7875, 0, 4.42838)
 randomize_scale_range = 0.0
 
 [node name="Rock40" parent="Props/Land" instance=ExtResource("16_mmhs5")]
