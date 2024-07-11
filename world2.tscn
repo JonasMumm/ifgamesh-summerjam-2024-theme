@@ -421,7 +421,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2634, 0.215, 19.4341)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6459, 0.019951, 17.658)
 
 [node name="checkpointY2" parent="Checkpoints" instance=ExtResource("10_ijbcn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1854, 0.215, 21.7016)
+transform = Transform3D(1.62789, 0, 0, 0, 1.62789, 0, 0, 0, 1.62789, 22.1854, 0.215, 21.7016)
 mandatory = false
 
 [node name="checkpointY3" parent="Checkpoints" instance=ExtResource("10_ijbcn")]
