@@ -7,7 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cgud471bqkj03" path="res://D3D/vegetation_meshes/BushBase4.res" id="5_r488h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ml7rq"]
-radius = 0.392119
+radius = 0.351827
 
 [node name="BushBase" type="StaticBody3D" node_paths=PackedStringArray("meshInstance")]
 collision_mask = 3
@@ -15,10 +15,11 @@ script = ExtResource("1_5qnrs")
 randomize_y_rotation = true
 meshes = Array[Mesh]([ExtResource("2_bh8lj"), ExtResource("3_3wh0r"), ExtResource("4_ap8yx"), ExtResource("5_r488h")])
 meshInstance = NodePath("MeshInstance3D")
+randomize_scale_range = 0.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ml7rq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.402812, 0, 0, 0, 0.402812, 0, 0, 0, 0.402812, 0, 0, 0)
 mesh = ExtResource("2_bh8lj")

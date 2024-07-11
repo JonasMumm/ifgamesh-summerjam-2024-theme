@@ -4,7 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cvq4gt5gds5ys" path="res://D3D/vegetation_meshes/Poptree.res" id="2_35q8u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ml7rq"]
-radius = 0.381476
+radius = 0.345665
 
 [node name="Poptree" type="StaticBody3D" node_paths=PackedStringArray("meshInstance")]
 collision_mask = 3
@@ -15,5 +15,5 @@ meshInstance = NodePath("MeshInstance3D")
 shape = SubResource("CapsuleShape3D_ml7rq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
 mesh = ExtResource("2_35q8u")

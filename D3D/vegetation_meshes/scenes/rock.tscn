@@ -9,7 +9,7 @@
 [ext_resource type="ArrayMesh" uid="uid://qwtpwq0ld2w0" path="res://D3D/vegetation_meshes/Rock6.res" id="7_00i3l"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ml7rq"]
-radius = 0.503436
+radius = 0.268555
 
 [node name="Rock" type="StaticBody3D" node_paths=PackedStringArray("meshInstance")]
 collision_mask = 3
@@ -17,10 +17,12 @@ script = ExtResource("1_8ik81")
 randomize_y_rotation = true
 meshes = Array[Mesh]([ExtResource("2_8m885"), ExtResource("3_pcbq3"), ExtResource("4_mtaub"), ExtResource("5_vjmdm"), ExtResource("6_ecyxe"), ExtResource("7_00i3l")])
 meshInstance = NodePath("MeshInstance3D")
+randomize_scale_range = 0.3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.957974, 0, 0, 0, 0.957974, 0, 0, 0, 0.957974, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_ml7rq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.221445, 0, 0, 0, 0.221445, 0, 0, 0, 0.221445, 0, 0, 0)
 mesh = ExtResource("7_00i3l")

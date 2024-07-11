@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://pwht7wptgeo2"]
+[gd_scene load_steps=40 format=4 uid="uid://pwht7wptgeo2"]
 
 [ext_resource type="Script" path="res://game_controller.gd" id="1_hxmck"]
 [ext_resource type="ArrayMesh" uid="uid://c8cuqjitg2g6h" path="res://D3D/IslesBase.res" id="2_fexv7"]
@@ -14,7 +14,11 @@
 [ext_resource type="Script" path="res://cam_distance_scaler.gd" id="11_ccif3"]
 [ext_resource type="PackedScene" uid="uid://ct5upnqs7cwe0" path="res://snap.tscn" id="12_oli2d"]
 [ext_resource type="PackedScene" uid="uid://dtuskqjxdt8yo" path="res://D3D/Isles.blend" id="13_fujsf"]
+[ext_resource type="PackedScene" uid="uid://bl3qi4jys8bxe" path="res://D3D/vegetation_meshes/scenes/bush_base.tscn" id="15_txulm"]
 [ext_resource type="PackedScene" uid="uid://bctiirss58fwx" path="res://D3D/vegetation_meshes/scenes/bush_1.tscn" id="15_u61gf"]
+[ext_resource type="PackedScene" uid="uid://kw6xdw5qa2ls" path="res://D3D/vegetation_meshes/scenes/rock.tscn" id="16_mmhs5"]
+[ext_resource type="PackedScene" uid="uid://byyuit1bwsgf7" path="res://D3D/vegetation_meshes/scenes/poptree.tscn" id="17_dowdd"]
+[ext_resource type="PackedScene" uid="uid://d1p00r0jk5un0" path="res://D3D/vegetation_meshes/scenes/palmtree.tscn" id="19_4qdgc"]
 
 [sub_resource type="Environment" id="Environment_uay2i"]
 ambient_light_source = 2
@@ -484,1094 +488,498 @@ shape = SubResource("BoxShape3D_og6xq")
 [node name="UnExpanded" parent="Isles" index="0"]
 process_mode = 4
 visible = false
-mesh = ExtResource("2_fexv7")
-skeleton = NodePath("")
 
 [node name="Expanded" parent="Isles" index="1"]
 process_mode = 4
 visible = false
-mesh = ExtResource("3_5u6yq")
-skeleton = NodePath("")
 
 [node name="UnExpandedHIGH" parent="Isles" index="2"]
 process_mode = 4
 visible = false
 mesh = SubResource("ArrayMesh_aw1a0")
-skeleton = NodePath("")
 
 [node name="2CollisionFloor" parent="Isles" index="3"]
 process_mode = 4
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19.9529)
 visible = false
 mesh = SubResource("ArrayMesh_ak6qc")
-skeleton = NodePath("")
 
 [node name="2CollisionWalls" parent="Isles" index="4"]
 process_mode = 4
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19.9529)
 visible = false
 mesh = SubResource("ArrayMesh_i43hi")
-skeleton = NodePath("")
 
 [node name="2Visual" parent="Isles" index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19.9529)
 mesh = SubResource("ArrayMesh_jr1bc")
-skeleton = NodePath("")
 
 [node name="Props" type="Node3D" parent="."]
 
 [node name="Land" type="Node3D" parent="Props"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.55941, 0.2, 19.0453)
+
+[node name="BushBase" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.42661, 0, 2.66459)
+
+[node name="BushBase2" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.42661, 0, 1.96125)
+
+[node name="BushBase3" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.56187, 0, 1.19028)
+
+[node name="BushBase4" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.38695, 0, 1.17675)
+
+[node name="BushBase5" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1038, 0, 1.6231)
+
+[node name="BushBase6" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4411, 0, 1.13617)
+
+[node name="BushBase7" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5493, 0, 2.65107)
+
+[node name="BushBase8" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.81886, 0, 2.44818)
+
+[node name="BushBase9" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.60245, 0, 1.74484)
+
+[node name="BushBase10" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.99379, 0, 1.59605)
+
+[node name="Rock" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3087, 0, -4.80704)
+
+[node name="Rock2" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.84833, 0, -4.98242)
+
+[node name="Rock3" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.37333, 0, -4.74858)
+
+[node name="Rock4" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.4391, 0, -5.0555)
+
+[node name="Rock5" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.78872, 0, -4.87281)
+
+[node name="Rock6" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.43065, 0, -4.55858)
+
+[node name="Rock7" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.43179, 0, -5.54511)
+
+[node name="Rock8" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5718, 0, -5.49395)
+
+[node name="Rock9" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.93602, 0, -5.91049)
+
+[node name="Poptree" parent="Props/Land" instance=ExtResource("17_dowdd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.85912, 0, 1.79291)
+
+[node name="Poptree2" parent="Props/Land" instance=ExtResource("17_dowdd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49835, 0, 1.25722)
+
+[node name="Poptree3" parent="Props/Land" instance=ExtResource("17_dowdd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.13758, 0, 0.699671)
+
+[node name="Poptree4" parent="Props/Land" instance=ExtResource("17_dowdd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79868, 0, 0.131187)
+
+[node name="Poptree5" parent="Props/Land" instance=ExtResource("17_dowdd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42698, 0, -0.41543)
+
+[node name="Poptree6" parent="Props/Land" instance=ExtResource("17_dowdd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.06621, 0, -0.962048)
+
+[node name="Poptree7" parent="Props/Land" instance=ExtResource("17_dowdd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59612, 0, -1.46494)
+
+[node name="Poptree8" parent="Props/Land" instance=ExtResource("17_dowdd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23536, 0, -1.86943)
 
 [node name="Bush1" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67256, 0, 16.9483)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84241, 0, 2.90801)
+
+[node name="BushBase11" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87583, 0, -2.64563)
+
+[node name="BushBase12" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.64625, 0, -2.16461)
+
+[node name="BushBase13" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.52599, 0, -1.55817)
+
+[node name="BushBase14" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3948, 0, -1.05528)
+
+[node name="BushBase15" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.95751, 0, -0.771042)
+
+[node name="BushBase16" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.84819, 0, -0.213491)
+
+[node name="BushBase17" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.99031, 0, 0.529909)
+
+[node name="BushBase18" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.07199, 0, -0.191628)
+
+[node name="BushBase19" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64563, 0, -1.03342)
+
+[node name="Rock10" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.21989, 0, -2.62954)
+
+[node name="BushBase20" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64563, 0, -1.03342)
+
+[node name="Rock11" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7929, 0, -0.579416)
+
+[node name="Rock12" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9408, 0, -0.590349)
+
+[node name="Rock13" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12665, 0, 0.420584)
+
+[node name="Rock14" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.732467, 0, -0.224426)
+
+[node name="Rock15" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.470089, 0, 0.223801)
+
+[node name="Rock16" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.874588, 0, -1.00062)
+
+[node name="Rock17" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.240511, 0, -0.803841)
+
+[node name="Rock18" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15883, 0, -0.596125)
+
+[node name="Rock19" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.317038, 0, 0.726688)
+
+[node name="Rock20" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163986, 0, 0.191004)
+
+[node name="Rock21" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0327964, 0, 2.03857)
+
+[node name="Rock22" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.426363, 0, 1.25144)
 
 [node name="Bush2" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.16849, 0, 17.1571)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.153053, 0, 2.21927)
 
 [node name="Bush3" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.27234, 0, 17.5487)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18585, 0, 1.56333)
 
 [node name="Bush4" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.76827, 0, 17.7575)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.223803, 0, 1.32281)
 
 [node name="Bush5" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70792, 0, 17.1571)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103547, 0, -0.196783)
 
 [node name="Bush6" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.20384, 0, 17.366)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.268152, 0, 0.798059)
 
 [node name="Bush7" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3338, 0, 17.9054)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.388408, 0, -0.382633)
 
 [node name="Bush8" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82972, 0, 18.1142)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.650784, 0, -0.945339)
 
 [node name="Bush9" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.81287, 0, 17.5226)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.508663, 0, -1.44823)
 
 [node name="Bush10" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3088, 0, 17.7314)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04435, 0, -1.90738)
 
 [node name="Bush11" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.92711, 0, 17.3026)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.869431, 0, -1.57941)
 
 [node name="Bush12" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.42304, 0, 17.5114)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.19864, 0, 3.50413)
 
 [node name="Bush13" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.52689, 0, 17.903)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.81601, 0, 3.55879)
 
 [node name="Bush14" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.02282, 0, 18.1118)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5755, 0, 3.44947)
 
 [node name="Bush15" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.96247, 0, 17.5114)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.171, 0, 3.29642)
 
 [node name="Bush16" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.45839, 0, 17.7202)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.70091, 0, 2.97938)
 
 [node name="Bush17" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.58835, 0, 18.2597)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.52599, 0, 2.65141)
 
 [node name="Bush18" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.08427, 0, 18.4685)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95235, 0, 3.01217)
 
 [node name="Bush19" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0674, 0, 17.8769)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30734, 0, 2.99031)
 
 [node name="Bush20" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5634, 0, 18.0857)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.44946, 0, 3.34015)
 
 [node name="Bush21" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.26997, 0, 17.7857)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03403, 0, 3.14336)
 
 [node name="Bush22" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.76589, 0, 17.9945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23081, 0, 3.23082)
 
 [node name="Bush23" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86974, 0, 18.3861)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06683, 0, 3.59159)
 
 [node name="Bush24" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36567, 0, 18.5949)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79352, 0, 3.39481)
 
 [node name="Bush25" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.30532, 0, 17.9945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79352, 0, 3.39481)
 
 [node name="Bush26" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.80124, 0, 18.2034)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39996, 0, 3.85396)
 
 [node name="Bush27" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9312, 0, 18.7428)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54723, 0, 3.8649)
 
 [node name="Bush28" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.42713, 0, 18.9516)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.530525, 0, 4.171)
 
 [node name="Bush29" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.41028, 0, 18.36)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42698, 0, 4.171)
 
 [node name="Bush30" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9062, 0, 18.5688)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75103, 0, -0.114481)
 
 [node name="Bush31" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6388, 0, 17.3509)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17615, 0, -2.8913)
+
+[node name="Rock23" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.76073, 0, 3.25784)
+
+[node name="Rock24" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.87521, 0, 3.11572)
+
+[node name="Rock25" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30157, 0, 2.48164)
+
+[node name="Rock26" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.20895, 0, -0.311262)
+
+[node name="Rock27" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57488, 0, -0.201939)
+
+[node name="Rock28" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91378, 0, -0.0926151)
+
+[node name="Rock29" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.10478, 0, 0.388409)
+
+[node name="Rock30" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 4.11056, 0, -0.201937)
+
+[node name="Palmtree" parent="Props/Land" instance=ExtResource("19_4qdgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0235, 0, -2.07043)
+
+[node name="Palmtree2" parent="Props/Land" instance=ExtResource("19_4qdgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3379, 0, -1.37195)
+
+[node name="Palmtree3" parent="Props/Land" instance=ExtResource("19_4qdgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3653, 0, -0.38916)
+
+[node name="Palmtree4" parent="Props/Land" instance=ExtResource("19_4qdgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4478, 0, 0.0124512)
+
+[node name="Palmtree5" parent="Props/Land" instance=ExtResource("19_4qdgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9143, 0, 1.20166)
+
+[node name="Palmtree6" parent="Props/Land" instance=ExtResource("19_4qdgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3507, 0, 2.31067)
+
+[node name="Palmtree7" parent="Props/Land" instance=ExtResource("19_4qdgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5984, 0, 2.04761)
+
+[node name="Palmtree8" parent="Props/Land" instance=ExtResource("19_4qdgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0908, 0, 1.25623)
+
+[node name="Palmtree9" parent="Props/Land" instance=ExtResource("19_4qdgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.082, 0, -1.51819)
+
+[node name="Palmtree10" parent="Props/Land" instance=ExtResource("19_4qdgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9543, 0, -0.947388)
+
+[node name="Palmtree11" parent="Props/Land" instance=ExtResource("19_4qdgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8089, 0, -1.79114)
+
+[node name="BushBase21" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1043, 0, -0.89917)
+
+[node name="BushBase22" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4082, 0, -1.33472)
+
+[node name="BushBase23" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1102, 0, 0.447754)
+
+[node name="BushBase24" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4202, 0, -1.28308)
+
+[node name="Rock31" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1303, 0, -1.54565)
+
+[node name="Rock32" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2717, 0, -0.856812)
+
+[node name="Rock33" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1942, 0, 1.76086)
+
+[node name="Rock34" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4786, 0, -0.393921)
+
+[node name="Rock35" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8975, 0, -0.208374)
+
+[node name="Rock36" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2953, 0, 0.32605)
+
+[node name="Rock37" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5549, 0, 0.912231)
+
+[node name="Rock38" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.793, 0, 3.36255)
+
+[node name="Rock44" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1146, 0, 2.47584)
+
+[node name="Rock45" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9201, 0, 1.56039)
+
+[node name="Rock46" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6234, 0, 0.831413)
+
+[node name="Rock47" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2168, 0, 0.695789)
+
+[node name="Rock48" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3609, 0, 0.305874)
+
+[node name="Rock49" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2846, 0, 0.0770092)
+
+[node name="Rock50" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2591, 0, -0.516342)
+
+[node name="Rock51" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3948, 0, -1.76238)
+
+[node name="Rock52" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8947, 0, -1.92343)
+
+[node name="Rock53" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.54647, 0, -2.0421)
+
+[node name="Rock54" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.22436, 0, -0.397671)
+
+[node name="Rock56" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2502, 0, -1.92343)
+
+[node name="Rock57" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1316, 0, -1.70304)
+
+[node name="Rock58" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3691, 0, 0.119392)
+
+[node name="Rock59" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3267, 0, 1.42477)
+
+[node name="Rock60" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3522, 0, 1.81468)
+
+[node name="Rock61" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1064, 0, 0.534739)
+
+[node name="Rock62" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7758, 0, -0.948639)
+
+[node name="Rock63" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4706, 0, -1.40637)
+
+[node name="Rock64" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.962, 0, 0.000722885)
+
+[node name="Rock65" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.335, 0, 0.585598)
+
+[node name="Rock66" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4115, 0, -2.08448)
+
+[node name="Rock55" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1.29974, 0, 0, 0, 1.29974, 0, 0, 0, 1.29974, 9.30065, 0, -0.126425)
+
+[node name="Rock39" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1.9223, 0, 0, 0, 1.9223, 0, 0, 0, 1.9223, 13.0384, 0, 3.95022)
+
+[node name="Rock41" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1.9223, 0, 0, 0, 1.9223, 0, 0, 0, 1.9223, 11.6721, 0, 3.61649)
+
+[node name="Rock42" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1.9223, 0, 0, 0, 1.9223, 0, 0, 0, 1.9223, 11.7153, 0, 4.08764)
+
+[node name="Rock43" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1.9223, 0, 0, 0, 1.9223, 0, 0, 0, 1.9223, 12.791, 0, 4.35462)
+
+[node name="Rock40" parent="Props/Land" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2275, 0, 3.5603)
 
 [node name="Bush32" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.13472, 0, 17.5597)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.82177, 0, -1.92249)
 
 [node name="Bush33" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.23858, 0, 17.9513)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.44606, 0, 0.272411)
 
 [node name="Bush34" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7345, 0, 18.1601)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6861, 0, -0.103292)
 
 [node name="Bush35" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.67415, 0, 17.5597)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2822, 0, -0.162615)
 
 [node name="Bush36" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.17008, 0, 17.7686)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1254, 0, 1.67636)
 
 [node name="Bush37" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.30003, 0, 18.308)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3215, 0, 5.18377)
 
 [node name="Bush38" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.79596, 0, 18.5168)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5867, 0, 4.80321)
 
-[node name="Bush39" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.77911, 0, 17.9252)
+[node name="BushBase25" parent="Props/Land" instance=ExtResource("15_txulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.51672, 0, 6.3822)
 
-[node name="Bush40" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.27504, 0, 18.134)
+[node name="Sea" type="Node3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.559, 0, 19.045)
 
-[node name="Bush41" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.81439, 0, 17.1416)
+[node name="Rock" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.73337, 0, -2.00323)
 
-[node name="Bush42" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.31031, 0, 17.3504)
+[node name="Rock2" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6761, 0, -4.57209)
 
-[node name="Bush43" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.41417, 0, 17.7419)
+[node name="Rock3" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0767, 0, -4.47782)
 
-[node name="Bush44" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.91009, 0, 17.9507)
+[node name="Rock4" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6525, 0, -4.35998)
 
-[node name="Bush45" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.84974, 0, 17.3504)
+[node name="Rock5" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1238, 0, -4.57209)
 
-[node name="Bush46" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.34567, 0, 17.5592)
-
-[node name="Bush47" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.47562, 0, 18.0986)
-
-[node name="Bush48" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.97155, 0, 18.3074)
-
-[node name="Bush49" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.9547, 0, 17.7158)
-
-[node name="Bush50" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4506, 0, 17.9246)
-
-[node name="Bush51" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81439, 0, 17.1416)
-
-[node name="Bush52" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.31031, 0, 17.3504)
-
-[node name="Bush53" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41417, 0, 17.7419)
-
-[node name="Bush54" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.91009, 0, 17.9507)
-
-[node name="Bush55" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.84974, 0, 17.3504)
-
-[node name="Bush56" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34567, 0, 17.5592)
-
-[node name="Bush57" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.47562, 0, 18.0986)
-
-[node name="Bush58" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.97155, 0, 18.3074)
-
-[node name="Bush59" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9547, 0, 17.7158)
-
-[node name="Bush60" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.45063, 0, 17.9246)
-
-[node name="Bush61" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81439, 0, 17.1416)
-
-[node name="Bush62" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.31031, 0, 17.3504)
-
-[node name="Bush63" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41417, 0, 17.7419)
-
-[node name="Bush64" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.91009, 0, 17.9507)
-
-[node name="Bush65" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.84974, 0, 17.3504)
-
-[node name="Bush66" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34567, 0, 17.5592)
-
-[node name="Bush67" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.47562, 0, 18.0986)
-
-[node name="Bush68" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.97155, 0, 18.3074)
-
-[node name="Bush69" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9547, 0, 17.7158)
-
-[node name="Bush70" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.45063, 0, 17.9246)
-
-[node name="Bush71" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17178, 0, 15.2896)
-
-[node name="Bush72" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.66771, 0, 15.4984)
-
-[node name="Bush73" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.77156, 0, 15.89)
-
-[node name="Bush74" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.26749, 0, 16.0988)
-
-[node name="Bush75" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.20714, 0, 15.4984)
-
-[node name="Bush76" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.70306, 0, 15.7072)
-
-[node name="Bush77" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.83302, 0, 16.2467)
-
-[node name="Bush78" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.32895, 0, 16.4555)
-
-[node name="Bush79" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3121, 0, 15.8639)
-
-[node name="Bush80" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.80802, 0, 16.0727)
-
-[node name="Bush81" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.42634, 0, 15.6439)
-
-[node name="Bush82" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.92226, 0, 15.8527)
-
-[node name="Bush83" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.02612, 0, 16.2442)
-
-[node name="Bush84" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.52204, 0, 16.4531)
-
-[node name="Bush85" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.46169, 0, 15.8527)
-
-[node name="Bush86" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.95762, 0, 16.0615)
-
-[node name="Bush87" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.08757, 0, 16.601)
-
-[node name="Bush88" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5835, 0, 16.8098)
-
-[node name="Bush89" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5667, 0, 16.2181)
-
-[node name="Bush90" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0626, 0, 16.427)
-
-[node name="Bush91" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.76919, 0, 16.127)
-
-[node name="Bush92" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.26511, 0, 16.3358)
-
-[node name="Bush93" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36897, 0, 16.7274)
-
-[node name="Bush94" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.86489, 0, 16.9362)
-
-[node name="Bush95" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.80454, 0, 16.3358)
-
-[node name="Bush96" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.30047, 0, 16.5447)
-
-[node name="Bush97" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.43042, 0, 17.0841)
-
-[node name="Bush98" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.92635, 0, 17.2929)
-
-[node name="Bush99" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9095, 0, 16.7013)
-
-[node name="Bush100" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.40543, 0, 16.9101)
-
-[node name="Bush101" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.13802, 0, 15.6922)
-
-[node name="Bush102" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.63395, 0, 15.901)
-
-[node name="Bush103" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7378, 0, 16.2926)
-
-[node name="Bush104" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.23373, 0, 16.5014)
-
-[node name="Bush105" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.17337, 0, 15.901)
-
-[node name="Bush106" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6693, 0, 16.1098)
-
-[node name="Bush107" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.79926, 0, 16.6493)
-
-[node name="Bush108" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.29518, 0, 16.8581)
-
-[node name="Bush109" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.27833, 0, 16.2665)
-
-[node name="Bush110" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.77426, 0, 16.4753)
-
-[node name="Bush111" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.31361, 0, 15.4829)
-
-[node name="Bush112" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.80954, 0, 15.6917)
-
-[node name="Bush113" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.91339, 0, 16.0832)
-
-[node name="Bush114" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.40932, 0, 16.292)
-
-[node name="Bush115" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.34896, 0, 15.6917)
-
-[node name="Bush116" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.84489, 0, 15.9005)
-
-[node name="Bush117" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.97484, 0, 16.4399)
-
-[node name="Bush118" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47077, 0, 16.6487)
-
-[node name="Bush119" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4539, 0, 16.0571)
-
-[node name="Bush120" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9498, 0, 16.2659)
-
-[node name="Bush121" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.31361, 0, 15.4829)
-
-[node name="Bush122" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.80954, 0, 15.6917)
-
-[node name="Bush123" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.91339, 0, 16.0832)
-
-[node name="Bush124" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.40932, 0, 16.292)
-
-[node name="Bush125" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34896, 0, 15.6917)
-
-[node name="Bush126" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.84489, 0, 15.9005)
-
-[node name="Bush127" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.97484, 0, 16.4399)
-
-[node name="Bush128" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.47077, 0, 16.6487)
-
-[node name="Bush129" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.45392, 0, 16.0571)
-
-[node name="Bush130" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94985, 0, 16.2659)
-
-[node name="Bush131" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.31361, 0, 15.4829)
-
-[node name="Bush132" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.80954, 0, 15.6917)
-
-[node name="Bush133" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.91339, 0, 16.0832)
-
-[node name="Bush134" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.40932, 0, 16.292)
-
-[node name="Bush135" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34896, 0, 15.6917)
-
-[node name="Bush136" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.84489, 0, 15.9005)
-
-[node name="Bush137" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.97484, 0, 16.4399)
-
-[node name="Bush138" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.47077, 0, 16.6487)
-
-[node name="Bush139" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.45392, 0, 16.0571)
-
-[node name="Bush140" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94985, 0, 16.2659)
-
-[node name="Bush141" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.927, 7.16497e-08, 17.0085)
-
-[node name="Bush142" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.4094, 5.67486e-08, 17.1554)
-
-[node name="Bush143" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.8644, 1.20451e-08, 16.2898)
-
-[node name="Bush144" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.3467, -2.85607e-09, 16.4366)
-
-[node name="Bush145" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.9882, 7.16497e-08, 17.4925)
-
-[node name="Bush146" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.4706, 7.16497e-08, 17.6393)
-
-[node name="Bush147" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.8128, 1.20451e-08, 16.6745)
-
-[node name="Bush148" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.2951, 1.20451e-08, 16.8214)
-
-[node name="Bush149" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.8972, 7.16497e-08, 17.8976)
-
-[node name="Bush150" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.37953, 7.16497e-08, 18.0445)
-
-[node name="Bush151" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.94544, 1.01452e-07, 18.1407)
-
-[node name="Bush152" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.42778, 1.01452e-07, 18.2876)
-
-[node name="Bush153" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.88278, 4.18474e-08, 17.4219)
-
-[node name="Bush154" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.36512, 4.18474e-08, 17.5688)
-
-[node name="Bush155" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.00663, 1.16353e-07, 18.6246)
-
-[node name="Bush156" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.48896, 1.01452e-07, 18.7715)
-
-[node name="Bush157" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.83117, 4.18474e-08, 17.8067)
-
-[node name="Bush158" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.3135, 4.18474e-08, 17.9536)
-
-[node name="Bush159" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.91561, 1.16353e-07, 19.0298)
-
-[node name="Bush160" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.39794, 1.16353e-07, 19.1767)
-
-[node name="Bush161" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.7181, -1.77572e-08, 16.1032)
-
-[node name="Bush162" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.2004, -1.77572e-08, 16.25)
-
-[node name="Bush163" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.6554, -6.24607e-08, 15.3844)
-
-[node name="Bush164" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.1378, -7.73619e-08, 15.5313)
-
-[node name="Bush165" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.7793, -2.85607e-09, 16.5871)
-
-[node name="Bush166" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.2616, -2.85607e-09, 16.734)
-
-[node name="Bush167" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.6038, -6.24607e-08, 15.7692)
-
-[node name="Bush168" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.0862, -7.73619e-08, 15.916)
-
-[node name="Bush169" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.68826, -2.85607e-09, 16.9923)
-
-[node name="Bush170" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.17059, -2.85607e-09, 17.1391)
-
-[node name="Bush171" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.9211, 5.67486e-08, 17.298)
-
-[node name="Bush172" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.4034, 5.67486e-08, 17.4448)
-
-[node name="Bush173" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.8584, -2.85607e-09, 16.5792)
-
-[node name="Bush174" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.3408, -2.85607e-09, 16.7261)
-
-[node name="Bush175" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.98227, 7.16497e-08, 17.7819)
-
-[node name="Bush176" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.46461, 7.16497e-08, 17.9288)
-
-[node name="Bush177" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.80682, -2.85607e-09, 16.964)
-
-[node name="Bush178" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.28915, -2.85607e-09, 17.1108)
-
-[node name="Bush179" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.89126, 7.16497e-08, 18.1871)
-
-[node name="Bush180" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.37359, 7.16497e-08, 18.3339)
-
-[node name="Bush181" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.1341, 1.01452e-07, 18.196)
-
-[node name="Bush182" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.61642, 1.01452e-07, 18.3429)
-
-[node name="Bush183" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.0714, 5.67486e-08, 17.4772)
-
-[node name="Bush184" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.55376, 4.18474e-08, 17.6241)
-
-[node name="Bush185" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.19526, 1.16353e-07, 18.6799)
-
-[node name="Bush186" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.6776, 1.16353e-07, 18.8268)
-
-[node name="Bush187" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.01981, 5.67486e-08, 17.862)
-
-[node name="Bush188" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.50214, 4.18474e-08, 18.0088)
-
-[node name="Bush189" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.10425, 1.16353e-07, 19.0851)
-
-[node name="Bush190" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.58658, 1.16353e-07, 19.2319)
-
-[node name="Bush191" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.6956, 5.67486e-08, 16.9463)
-
-[node name="Bush192" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.1779, 5.67486e-08, 17.0931)
-
-[node name="Bush193" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.6329, -2.85607e-09, 16.2275)
-
-[node name="Bush194" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.1152, -2.85607e-09, 16.3744)
-
-[node name="Bush195" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.7567, 7.16497e-08, 17.4302)
-
-[node name="Bush196" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.2391, 5.67486e-08, 17.5771)
-
-[node name="Bush197" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.5813, -2.85607e-09, 16.6123)
-
-[node name="Bush198" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.0636, -2.85607e-09, 16.7591)
-
-[node name="Bush199" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.66572, 7.16497e-08, 17.8354)
-
-[node name="Bush200" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.14805, 7.16497e-08, 17.9822)
-
-[node name="Bush201" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.6956, 5.67486e-08, 16.9463)
-
-[node name="Bush202" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.1779, 5.67486e-08, 17.0931)
-
-[node name="Bush203" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.6329, -2.85607e-09, 16.2275)
-
-[node name="Bush204" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 11.1152, -2.85607e-09, 16.3744)
-
-[node name="Bush205" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.7567, 7.16497e-08, 17.4302)
-
-[node name="Bush206" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.2391, 5.67486e-08, 17.5771)
-
-[node name="Bush207" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.5813, -2.85607e-09, 16.6123)
-
-[node name="Bush208" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.0636, -2.85607e-09, 16.7591)
-
-[node name="Bush209" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.66572, 7.16497e-08, 17.8354)
-
-[node name="Bush210" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.14805, 7.16497e-08, 17.9822)
-
-[node name="Bush211" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.1925, 3.08943e-07, 20.6657)
-
-[node name="Bush212" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.67479, 2.94042e-07, 20.8126)
-
-[node name="Bush213" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 10.1298, 2.49338e-07, 19.947)
-
-[node name="Bush214" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.61213, 2.34437e-07, 20.0938)
-
-[node name="Bush215" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.25363, 3.08943e-07, 21.1497)
-
-[node name="Bush216" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.73597, 3.08943e-07, 21.2965)
-
-[node name="Bush217" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.07818, 2.49338e-07, 20.3317)
-
-[node name="Bush218" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.56051, 2.49338e-07, 20.4786)
-
-[node name="Bush219" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.16262, 3.08943e-07, 21.5548)
-
-[node name="Bush220" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.64495, 3.08943e-07, 21.7017)
-
-[node name="Bush221" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.21086, 3.38745e-07, 21.7979)
-
-[node name="Bush222" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.6932, 3.38745e-07, 21.9448)
-
-[node name="Bush223" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.1482, 2.7914e-07, 21.0791)
-
-[node name="Bush224" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.63054, 2.7914e-07, 21.226)
-
-[node name="Bush225" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.27205, 3.53646e-07, 22.2818)
-
-[node name="Bush226" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 6.75438, 3.38745e-07, 22.4287)
-
-[node name="Bush227" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.09659, 2.7914e-07, 21.4639)
-
-[node name="Bush228" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 6.57892, 2.7914e-07, 21.6107)
-
-[node name="Bush229" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 6.18103, 3.53646e-07, 22.687)
-
-[node name="Bush230" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.66336, 3.53646e-07, 22.8339)
-
-[node name="Bush231" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.98351, 2.19536e-07, 19.7604)
-
-[node name="Bush232" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.46585, 2.19536e-07, 19.9072)
-
-[node name="Bush233" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.92085, 1.74832e-07, 19.0416)
-
-[node name="Bush234" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.40319, 1.59931e-07, 19.1885)
-
-[node name="Bush235" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.04469, 2.34437e-07, 20.2443)
-
-[node name="Bush236" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.52703, 2.34437e-07, 20.3912)
-
-[node name="Bush237" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.86924, 1.74832e-07, 19.4264)
-
-[node name="Bush238" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.35157, 1.59931e-07, 19.5732)
-
-[node name="Bush239" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.95368, 2.34437e-07, 20.6495)
-
-[node name="Bush240" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.43601, 2.34437e-07, 20.7963)
-
-[node name="Bush241" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.18651, 2.94042e-07, 20.9552)
-
-[node name="Bush242" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.66884, 2.94042e-07, 21.102)
-
-[node name="Bush243" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.12385, 2.34437e-07, 20.2364)
-
-[node name="Bush244" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.60618, 2.34437e-07, 20.3833)
-
-[node name="Bush245" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.24769, 3.08943e-07, 21.4391)
-
-[node name="Bush246" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.73003, 3.08943e-07, 21.586)
-
-[node name="Bush247" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.07223, 2.34437e-07, 20.6212)
-
-[node name="Bush248" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.55457, 2.34437e-07, 20.768)
-
-[node name="Bush249" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.15667, 3.08943e-07, 21.8443)
-
-[node name="Bush250" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 6.63901, 3.08943e-07, 21.9911)
-
-[node name="Bush251" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.3995, 3.38745e-07, 21.8532)
-
-[node name="Bush252" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.88183, 3.38745e-07, 22.0001)
-
-[node name="Bush253" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.33684, 2.94042e-07, 21.1344)
-
-[node name="Bush254" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.81918, 2.7914e-07, 21.2813)
-
-[node name="Bush255" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.46068, 3.53646e-07, 22.3371)
-
-[node name="Bush256" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 6.94302, 3.53646e-07, 22.484)
-
-[node name="Bush257" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.28523, 2.94042e-07, 21.5192)
-
-[node name="Bush258" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 6.76756, 2.7914e-07, 21.666)
-
-[node name="Bush259" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 6.36967, 3.53646e-07, 22.7423)
-
-[node name="Bush260" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.852, 3.53646e-07, 22.8891)
-
-[node name="Bush261" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.96097, 2.94042e-07, 20.6035)
-
-[node name="Bush262" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.44331, 2.94042e-07, 20.7503)
-
-[node name="Bush263" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.89831, 2.34437e-07, 19.8847)
-
-[node name="Bush264" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.38065, 2.34437e-07, 20.0316)
-
-[node name="Bush265" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.02216, 3.08943e-07, 21.0874)
-
-[node name="Bush266" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.50449, 2.94042e-07, 21.2343)
-
-[node name="Bush267" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.8467, 2.34437e-07, 20.2695)
-
-[node name="Bush268" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.32903, 2.34437e-07, 20.4163)
-
-[node name="Bush269" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.93114, 3.08943e-07, 21.4926)
-
-[node name="Bush270" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.41347, 3.08943e-07, 21.6394)
-
-[node name="Bush271" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.96097, 2.94042e-07, 20.6035)
-
-[node name="Bush272" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.44331, 2.94042e-07, 20.7503)
-
-[node name="Bush273" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.89831, 2.34437e-07, 19.8847)
-
-[node name="Bush274" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.38065, 2.34437e-07, 20.0316)
-
-[node name="Bush275" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 9.02216, 3.08943e-07, 21.0874)
-
-[node name="Bush276" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.50449, 2.94042e-07, 21.2343)
-
-[node name="Bush277" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.8467, 2.34437e-07, 20.2695)
-
-[node name="Bush278" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 8.32903, 2.34437e-07, 20.4163)
-
-[node name="Bush279" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.93114, 3.08943e-07, 21.4926)
-
-[node name="Bush280" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 7.41347, 3.08943e-07, 21.6394)
-
-[node name="Bush281" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 6.00027, 3.22343e-07, 22.3089)
-
-[node name="Bush282" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.48261, 3.07442e-07, 22.4558)
-
-[node name="Bush283" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.93762, 2.62738e-07, 21.5901)
-
-[node name="Bush284" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.41995, 2.47837e-07, 21.737)
-
-[node name="Bush285" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.06146, 3.22343e-07, 22.7929)
-
-[node name="Bush286" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.54379, 3.22343e-07, 22.9397)
-
-[node name="Bush287" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.886, 2.62738e-07, 21.9749)
-
-[node name="Bush288" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.36833, 2.62738e-07, 22.1218)
-
-[node name="Bush289" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.97044, 3.22343e-07, 23.198)
-
-[node name="Bush290" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.45277, 3.22343e-07, 23.3449)
-
-[node name="Bush291" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.01868, 3.52145e-07, 23.4411)
-
-[node name="Bush292" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.50102, 3.52145e-07, 23.588)
-
-[node name="Bush293" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.95603, 2.92541e-07, 22.7223)
-
-[node name="Bush294" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.43836, 2.92541e-07, 22.8692)
-
-[node name="Bush295" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.07987, 3.67047e-07, 23.925)
-
-[node name="Bush296" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 2.5622, 3.52145e-07, 24.0719)
-
-[node name="Bush297" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 2.90441, 2.92541e-07, 23.1071)
-
-[node name="Bush298" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 2.38674, 2.92541e-07, 23.2539)
-
-[node name="Bush299" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 1.98885, 3.67047e-07, 24.3302)
-
-[node name="Bush300" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 1.47118, 3.67047e-07, 24.477)
-
-[node name="Bush301" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.79133, 2.32936e-07, 21.4036)
-
-[node name="Bush302" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.27367, 2.32936e-07, 21.5504)
-
-[node name="Bush303" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.72868, 1.88233e-07, 20.6848)
-
-[node name="Bush304" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.21101, 1.73332e-07, 20.8316)
-
-[node name="Bush305" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.85252, 2.47837e-07, 21.8875)
-
-[node name="Bush306" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.33485, 2.47837e-07, 22.0344)
-
-[node name="Bush307" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.67706, 1.88233e-07, 21.0695)
-
-[node name="Bush308" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.15939, 1.73332e-07, 21.2164)
-
-[node name="Bush309" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.7615, 2.47837e-07, 22.2926)
-
-[node name="Bush310" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.24383, 2.47837e-07, 22.4395)
-
-[node name="Bush311" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.99433, 3.07442e-07, 22.5984)
-
-[node name="Bush312" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.47667, 3.07442e-07, 22.7452)
-
-[node name="Bush313" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.93167, 2.47837e-07, 21.8796)
-
-[node name="Bush314" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.41401, 2.47837e-07, 22.0264)
-
-[node name="Bush315" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.05551, 3.22343e-07, 23.0823)
-
-[node name="Bush316" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.53785, 3.22343e-07, 23.2292)
-
-[node name="Bush317" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.88006, 2.47837e-07, 22.2643)
-
-[node name="Bush318" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.36239, 2.47837e-07, 22.4112)
-
-[node name="Bush319" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 2.9645, 3.22343e-07, 23.4874)
-
-[node name="Bush320" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 2.44683, 3.22343e-07, 23.6343)
-
-[node name="Bush321" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.20732, 3.52145e-07, 23.4964)
-
-[node name="Bush322" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.68966, 3.52145e-07, 23.6433)
-
-[node name="Bush323" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.14467, 3.07442e-07, 22.7776)
-
-[node name="Bush324" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.627, 2.92541e-07, 22.9245)
-
-[node name="Bush325" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.26851, 3.67047e-07, 23.9803)
-
-[node name="Bush326" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 2.75084, 3.67047e-07, 24.1272)
-
-[node name="Bush327" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.09305, 3.07442e-07, 23.1624)
-
-[node name="Bush328" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 2.57538, 2.92541e-07, 23.3092)
-
-[node name="Bush329" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 2.17749, 3.67047e-07, 24.3855)
-
-[node name="Bush330" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 1.65982, 3.67047e-07, 24.5323)
-
-[node name="Bush331" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.76879, 3.07442e-07, 22.2467)
-
-[node name="Bush332" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.25113, 3.07442e-07, 22.3935)
-
-[node name="Bush333" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.70614, 2.47837e-07, 21.5279)
-
-[node name="Bush334" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.18847, 2.47837e-07, 21.6748)
-
-[node name="Bush335" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.82998, 3.22343e-07, 22.7306)
-
-[node name="Bush336" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.31231, 3.07442e-07, 22.8775)
-
-[node name="Bush337" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.65452, 2.47837e-07, 21.9127)
-
-[node name="Bush338" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.13686, 2.47837e-07, 22.0595)
-
-[node name="Bush339" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.73896, 3.22343e-07, 23.1358)
-
-[node name="Bush340" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.2213, 3.22343e-07, 23.2826)
-
-[node name="Bush341" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.76879, 3.07442e-07, 22.2467)
-
-[node name="Bush342" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.25113, 3.07442e-07, 22.3935)
-
-[node name="Bush343" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.70614, 2.47837e-07, 21.5279)
-
-[node name="Bush344" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 5.18847, 2.47837e-07, 21.6748)
-
-[node name="Bush345" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.82998, 3.22343e-07, 22.7306)
-
-[node name="Bush346" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.31231, 3.07442e-07, 22.8775)
-
-[node name="Bush347" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.65452, 2.47837e-07, 21.9127)
-
-[node name="Bush348" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 4.13686, 2.47837e-07, 22.0595)
-
-[node name="Bush349" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.73896, 3.22343e-07, 23.1358)
-
-[node name="Bush350" parent="Props/Land" instance=ExtResource("15_u61gf")]
-transform = Transform3D(-0.780736, -2.73135e-08, -0.624861, 2.73135e-08, 1, -7.78384e-08, 0.624861, -7.78384e-08, -0.780736, 3.2213, 3.22343e-07, 23.2826)
+[node name="Rock6" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.336, 0, -3.9829)
 
 [connection signal="vehicle_entered" from="Checkpoints/checkpointA1" to="Snaps/Snap1" method="_on_checkpoint_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointA2" to="Snaps/Snap2" method="_on_checkpoint_entered"]
