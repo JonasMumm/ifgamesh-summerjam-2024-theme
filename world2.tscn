@@ -987,6 +987,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1238, 0, -4.57209)
 [node name="Rock6" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.336, 0, -3.9829)
 
+[node name="Rock7" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21401, 0, 1.80283)
+
+[node name="Rock8" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.97671, 0, 0.889974)
+
+[node name="Rock9" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.31303, 0, 0.905988)
+
+[node name="Rock10" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9022, 0, 4.49334)
+
+[node name="Rock11" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5019, 0, 4.96484)
+
+[node name="Rock12" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.91639, 0, 0.352534)
+
+[node name="Rock13" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.53724, 0, -1.69738)
+
+[node name="Rock14" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12979, 0, -1.3931)
+
+[node name="Rock15" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.48782, 0, -3.2233)
+
 [connection signal="vehicle_entered" from="Checkpoints/checkpointA1" to="Snaps/Snap1" method="_on_checkpoint_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointA2" to="Snaps/Snap2" method="_on_checkpoint_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointA4" to="VehicleSpawners/vehicle_spawnerABoat" method="_on_checkpoint_vehicle_entered"]
