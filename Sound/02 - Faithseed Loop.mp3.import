@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bkn6jyp42gdug"
+path="res://.godot/imported/02 - Faithseed Loop.mp3-b4345e1b82b34b021424226d037949ec.mp3str"
+
+[deps]
+
+source_file="res://Sound/02 - Faithseed Loop.mp3"
+dest_files=["res://.godot/imported/02 - Faithseed Loop.mp3-b4345e1b82b34b021424226d037949ec.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
