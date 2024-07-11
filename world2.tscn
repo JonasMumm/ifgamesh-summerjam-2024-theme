@@ -259,7 +259,7 @@ shadow_mesh = SubResource("ArrayMesh_eqpof")
 
 [node name="World" type="Node3D" node_paths=PackedStringArray("checkpoints", "vehicle_spawners", "default_spawner", "cam", "route_container", "compass", "final_cam_position", "route_marker_scaler", "snap_scaler", "snaps", "route_marker_area", "route_marker_switchover_area")]
 script = ExtResource("1_hxmck")
-checkpoints = [NodePath("Checkpoints/checkpointA1"), NodePath("Checkpoints/checkpointA2"), NodePath("Checkpoints/checkpointA3"), NodePath("Checkpoints/checkpointA4"), NodePath("Checkpoints/checkpointW1"), NodePath("Checkpoints/checkpointW2"), NodePath("Checkpoints/checkpointAA1"), NodePath("Checkpoints/checkpointAA2"), NodePath("Checkpoints/checkpointAA3"), NodePath("Checkpoints/checkpointAA4"), NodePath("Checkpoints/checkpointAA5"), NodePath("Checkpoints/checkpointY1"), NodePath("Checkpoints/checkpointY2"), NodePath("Checkpoints/checkpointY3"), NodePath("Checkpoints/checkpointY4")]
+checkpoints = [NodePath("Checkpoints/checkpointA1"), NodePath("Checkpoints/checkpointA2"), NodePath("Checkpoints/checkpointA3"), NodePath("Checkpoints/checkpointA4"), NodePath("Checkpoints/checkpointW1"), NodePath("Checkpoints/checkpointW2"), NodePath("Checkpoints/checkpointW3"), NodePath("Checkpoints/checkpointW4"), NodePath("Checkpoints/checkpointAA1"), NodePath("Checkpoints/checkpointAA2"), NodePath("Checkpoints/checkpointAA3"), NodePath("Checkpoints/checkpointAA4"), NodePath("Checkpoints/checkpointAA5"), NodePath("Checkpoints/checkpointY1"), NodePath("Checkpoints/checkpointY2"), NodePath("Checkpoints/checkpointY3"), NodePath("Checkpoints/checkpointY4")]
 vehicle_spawners = [NodePath("VehicleSpawners/vehicle_spawnerACar"), NodePath("VehicleSpawners/vehicle_spawnerABoat"), NodePath("VehicleSpawners/vehicle_spawnerWCar"), NodePath("VehicleSpawners/vehicle_spawnerWBoat"), NodePath("VehicleSpawners/vehicle_spawnerAACar"), NodePath("VehicleSpawners/vehicle_spawnerAABoat"), NodePath("VehicleSpawners/vehicle_spawnerYCar")]
 default_spawner = NodePath("VehicleSpawners/vehicle_spawnerACar")
 cam = NodePath("CameraController")
@@ -270,7 +270,7 @@ final_cam_distance = 60.0
 final_cam_damping_factor = 0.2
 route_marker_scaler = NodePath("CamDistScalers/routeMarkerScaler")
 snap_scaler = NodePath("CamDistScalers/snapScaler")
-snaps = [NodePath("Snaps/Snap1"), NodePath("Snaps/Snap2"), NodePath("Snaps/Snap3"), NodePath("Snaps/Snap4")]
+snaps = [NodePath("Snaps/Snap1"), NodePath("Snaps/Snap2"), NodePath("Snaps/Snap3"), NodePath("Snaps/Snap4"), NodePath("Snaps/Snap5"), NodePath("Snaps/Snap6"), NodePath("Snaps/Snap7")]
 route_marker_area = NodePath("RouteMarkerArea")
 route_marker_switchover_area = NodePath("RouteMarkerFailsafeSwitchoverTrigger")
 
@@ -386,14 +386,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.30189, 0.215, 19.2837)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67024, 0.019951, 17.4627)
 
 [node name="checkpointW2" parent="Checkpoints" instance=ExtResource("10_ijbcn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.14705, 0.215, 21.5236)
+
+[node name="checkpointW3" parent="Checkpoints" instance=ExtResource("10_ijbcn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.55613, 0.215, 21.8018)
+
+[node name="checkpointW4" parent="Checkpoints" instance=ExtResource("10_ijbcn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2765, 0.215, 18.2271)
 
 [node name="checkpointAA1" parent="Checkpoints" instance=ExtResource("10_ijbcn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.659, 0.019951, 16.6966)
 
 [node name="checkpointAA2" parent="Checkpoints" instance=ExtResource("10_ijbcn")]
-transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 16.3907, 0.215, 21.2562)
-mandatory = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3907, 0.215, 21.2562)
 
 [node name="checkpointAA3" parent="Checkpoints" instance=ExtResource("10_ijbcn")]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 14.6578, 0.215, 22.0592)
@@ -450,9 +455,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.976489, 0.208, 14.8969)
 transform = Transform3D(0.961232, 0, -0.275739, 0, 1, 0, 0.275739, 0, 0.961232, -3.07075, 0.208, 20.8666)
 
 [node name="Snap3" parent="Snaps" instance=ExtResource("12_oli2d")]
-transform = Transform3D(0.981145, 0, 0.193275, 0, 1, 0, -0.193275, 0, 0.981145, 11.9239, 0.208, 20.4293)
+transform = Transform3D(0.986144, 0, 0.16589, 0, 1, 0, -0.16589, 0, 0.986144, 3.97604, 0.208, 22.138)
 
 [node name="Snap4" parent="Snaps" instance=ExtResource("12_oli2d")]
+transform = Transform3D(0.993644, 0, -0.112563, 0, 1, 0, 0.112563, 0, 0.993644, 9.77294, 0.208, 22.0518)
+
+[node name="Snap5" parent="Snaps" instance=ExtResource("12_oli2d")]
+transform = Transform3D(0.97625, 0, 0.216643, 0, 1, 0, -0.216643, 0, 0.97625, 16.2163, 0.208, 21.7932)
+
+[node name="Snap6" parent="Snaps" instance=ExtResource("12_oli2d")]
+transform = Transform3D(0.981145, 0, 0.193275, 0, 1, 0, -0.193275, 0, 0.981145, 11.9239, 0.208, 20.4293)
+
+[node name="Snap7" parent="Snaps" instance=ExtResource("12_oli2d")]
 transform = Transform3D(0.943419, 0, -0.331602, 0, 1, 0, 0.331602, 0, 0.943419, 24.1318, 0.208, 18.3357)
 
 [node name="RouteMarkerArea" type="Area3D" parent="."]
@@ -1013,11 +1027,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.48782, 0, -3.2233)
 [connection signal="vehicle_entered" from="Checkpoints/checkpointA2" to="Snaps/Snap2" method="_on_checkpoint_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointA4" to="VehicleSpawners/vehicle_spawnerABoat" method="_on_checkpoint_vehicle_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointW1" to="VehicleSpawners/vehicle_spawnerWCar" method="_on_checkpoint_vehicle_entered"]
-[connection signal="vehicle_entered" from="Checkpoints/checkpointW2" to="VehicleSpawners/vehicle_spawnerWBoat" method="_on_checkpoint_vehicle_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointW2" to="Snaps/Snap3" method="_on_checkpoint_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointW3" to="Snaps/Snap4" method="_on_checkpoint_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointW4" to="VehicleSpawners/vehicle_spawnerWBoat" method="_on_checkpoint_vehicle_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointAA1" to="VehicleSpawners/vehicle_spawnerAACar" method="_on_checkpoint_vehicle_entered"]
-[connection signal="vehicle_entered" from="Checkpoints/checkpointAA4" to="Snaps/Snap3" method="_on_checkpoint_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointAA2" to="Snaps/Snap5" method="_on_checkpoint_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointAA4" to="Snaps/Snap6" method="_on_checkpoint_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointAA5" to="VehicleSpawners/vehicle_spawnerAABoat" method="_on_checkpoint_vehicle_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointY1" to="VehicleSpawners/vehicle_spawnerYCar" method="_on_checkpoint_vehicle_entered"]
-[connection signal="vehicle_entered" from="Checkpoints/checkpointY3" to="Snaps/Snap4" method="_on_checkpoint_entered"]
+[connection signal="vehicle_entered" from="Checkpoints/checkpointY3" to="Snaps/Snap7" method="_on_checkpoint_entered"]
 
 [editable path="Isles"]
