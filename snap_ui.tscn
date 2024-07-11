@@ -1,6 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5hpkdakth8at"]
+[gd_scene load_steps=5 format=3 uid="uid://b5hpkdakth8at"]
 
-[ext_resource type="Texture2D" uid="uid://c4g5v535d1heq" path="res://icon.svg" id="1_sg8op"]
+[ext_resource type="Texture2D" uid="uid://yxy03xswvwjh" path="res://Textures/pngs/text/island.png" id="1_45jxk"]
+
+[sub_resource type="Animation" id="Animation_3ryr6"]
+resource_name = "appear"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0n24q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l53jo"]
+_data = {
+"RESET": SubResource("Animation_0n24q"),
+"appear": SubResource("Animation_3ryr6")
+}
 
 [node name="SnapUi" type="Control"]
 layout_mode = 3
@@ -25,10 +62,25 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = 30.0
-offset_right = -30.0
-offset_bottom = -130.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_sg8op")
+texture = ExtResource("1_45jxk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 25.0
+offset_right = -32.0
+offset_bottom = -139.0
+color = Color(0.89, 0.8277, 0.712, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l53jo")
+}
+autoplay = "appear"

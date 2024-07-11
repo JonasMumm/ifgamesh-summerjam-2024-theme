@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://pwht7wptgeo2"]
+[gd_scene load_steps=45 format=4 uid="uid://pwht7wptgeo2"]
 
 [ext_resource type="Script" path="res://game_controller.gd" id="1_hxmck"]
 [ext_resource type="Material" uid="uid://g1l4vcxbw8o4" path="res://D3D/world_material.tres" id="2_ojf13"]
@@ -10,11 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://cvskt3ncdaglc" path="res://D3D/compassArrow.blend" id="9_b684b"]
 [ext_resource type="PackedScene" uid="uid://b0tjbq86642kt" path="res://checkpoint.tscn" id="10_ijbcn"]
 [ext_resource type="Script" path="res://cam_distance_scaler.gd" id="11_ccif3"]
+[ext_resource type="Texture2D" uid="uid://ceqfp3r4701tq" path="res://Textures/pngs/text/letter.png" id="11_eiom4"]
+[ext_resource type="Texture2D" uid="uid://ce4d1aw72gdg1" path="res://Textures/pngs/text/movie.png" id="12_dqhmr"]
 [ext_resource type="PackedScene" uid="uid://ct5upnqs7cwe0" path="res://snap.tscn" id="12_oli2d"]
+[ext_resource type="Texture2D" uid="uid://3cyu0545fh35" path="res://Textures/pngs/text/paris.png" id="13_0q0d2"]
 [ext_resource type="PackedScene" uid="uid://dtuskqjxdt8yo" path="res://D3D/Isles.blend" id="13_fujsf"]
+[ext_resource type="Texture2D" uid="uid://du0otf14dwgr5" path="res://Textures/pngs/text/portal.png" id="14_3glio"]
+[ext_resource type="Texture2D" uid="uid://88um2jadntm5" path="res://Textures/pngs/text/rocket.png" id="15_4o5pm"]
 [ext_resource type="AudioStream" uid="uid://bkn6jyp42gdug" path="res://Sound/02 - Faithseed Loop.mp3" id="15_ep0d7"]
 [ext_resource type="PackedScene" uid="uid://bl3qi4jys8bxe" path="res://D3D/vegetation_meshes/scenes/bush_base.tscn" id="15_txulm"]
 [ext_resource type="PackedScene" uid="uid://bctiirss58fwx" path="res://D3D/vegetation_meshes/scenes/bush_1.tscn" id="15_u61gf"]
+[ext_resource type="Texture2D" uid="uid://yxy03xswvwjh" path="res://Textures/pngs/text/island.png" id="16_e6045"]
 [ext_resource type="PackedScene" uid="uid://kw6xdw5qa2ls" path="res://D3D/vegetation_meshes/scenes/rock.tscn" id="16_mmhs5"]
 [ext_resource type="PackedScene" uid="uid://byyuit1bwsgf7" path="res://D3D/vegetation_meshes/scenes/poptree.tscn" id="17_dowdd"]
 [ext_resource type="PackedScene" uid="uid://d1p00r0jk5un0" path="res://D3D/vegetation_meshes/scenes/palmtree.tscn" id="19_4qdgc"]
@@ -450,24 +456,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57086, 0, 0)
 
 [node name="Snap1" parent="Snaps" instance=ExtResource("12_oli2d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.976489, 0.208, 14.8969)
+texture = ExtResource("11_eiom4")
 
 [node name="Snap2" parent="Snaps" instance=ExtResource("12_oli2d")]
 transform = Transform3D(0.961232, 0, -0.275739, 0, 1, 0, 0.275739, 0, 0.961232, -3.07075, 0.208, 20.8666)
+texture = ExtResource("12_dqhmr")
 
 [node name="Snap3" parent="Snaps" instance=ExtResource("12_oli2d")]
 transform = Transform3D(0.986144, 0, 0.16589, 0, 1, 0, -0.16589, 0, 0.986144, 3.97604, 0.208, 22.138)
+texture = ExtResource("13_0q0d2")
 
 [node name="Snap4" parent="Snaps" instance=ExtResource("12_oli2d")]
 transform = Transform3D(0.993644, 0, -0.112563, 0, 1, 0, 0.112563, 0, 0.993644, 9.77294, 0.208, 22.0518)
+texture = ExtResource("14_3glio")
 
 [node name="Snap5" parent="Snaps" instance=ExtResource("12_oli2d")]
 transform = Transform3D(0.97625, 0, 0.216643, 0, 1, 0, -0.216643, 0, 0.97625, 16.2163, 0.208, 21.7932)
+texture = ExtResource("15_4o5pm")
 
 [node name="Snap6" parent="Snaps" instance=ExtResource("12_oli2d")]
 transform = Transform3D(0.981145, 0, 0.193275, 0, 1, 0, -0.193275, 0, 0.981145, 11.9239, 0.208, 20.4293)
+texture = ExtResource("15_4o5pm")
 
 [node name="Snap7" parent="Snaps" instance=ExtResource("12_oli2d")]
 transform = Transform3D(0.943419, 0, -0.331602, 0, 1, 0, 0.331602, 0, 0.943419, 24.1318, 0.208, 18.3357)
+texture = ExtResource("16_e6045")
 
 [node name="RouteMarkerArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.46886, 0, 12.4135)

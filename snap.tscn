@@ -14,6 +14,8 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqbg8"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_qe0mm")
+emission = Color(0.216667, 0, 1, 1)
+emission_energy_multiplier = 0.3
 
 [sub_resource type="Animation" id="Animation_gvlcb"]
 length = 0.001
@@ -88,10 +90,11 @@ _data = {
 "appear": SubResource("Animation_d4ar4")
 }
 
-[node name="Snap" type="Node3D" node_paths=PackedStringArray("animation_player")]
+[node name="Snap" type="Node3D" node_paths=PackedStringArray("animation_player", "texturerect")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22732, 0)
 script = ExtResource("1_tkf4s")
 animation_player = NodePath("AnimationPlayer")
+texturerect = NodePath("SubViewport/SnapUi/ColorRect/TextureRect")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2i(500, 600)
@@ -113,3 +116,5 @@ autoplay = "appear"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_leeli")
 autoplay = true
+
+[editable path="SubViewport/SnapUi"]
