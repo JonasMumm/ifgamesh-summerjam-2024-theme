@@ -38,7 +38,10 @@ func _ready():
 	
 	route_marker_switchover_area.body_entered.connect(OnSwitchoverAreaEnter)
 
-		
+func _process(delta:float):
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().quit()
+
 func OnCheckpointEntered(point : checkpoint, v:vehicle_controller):
 	while checkpoints.size() > 0:
 		var c := checkpoints[0]
