@@ -57,6 +57,11 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/path": "res://D3D/IslesWalls.res"
 }
+},
+"nodes": {
+"PATH:2CollisionWallsCutout": {
+"import/skip_import": true
+}
 }
 }
 fbx/importer=0
