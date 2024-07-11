@@ -1,0 +1,26 @@
+[gd_scene load_steps=9 format=3 uid="uid://kw6xdw5qa2ls"]
+
+[ext_resource type="Script" path="res://D3D/vegetation_meshes/scenes/prop.gd" id="1_8ik81"]
+[ext_resource type="ArrayMesh" uid="uid://udixnxdky0cp" path="res://D3D/vegetation_meshes/Rock1.res" id="2_8m885"]
+[ext_resource type="ArrayMesh" uid="uid://d24k1fh6ec8w3" path="res://D3D/vegetation_meshes/Rock2.res" id="3_pcbq3"]
+[ext_resource type="ArrayMesh" uid="uid://d3l6kexurjt4l" path="res://D3D/vegetation_meshes/Rock3.res" id="4_mtaub"]
+[ext_resource type="ArrayMesh" uid="uid://b3b2y6pamlmb0" path="res://D3D/vegetation_meshes/Rock4.res" id="5_vjmdm"]
+[ext_resource type="ArrayMesh" uid="uid://dajosumhviln5" path="res://D3D/vegetation_meshes/Rock5.res" id="6_ecyxe"]
+[ext_resource type="ArrayMesh" uid="uid://qwtpwq0ld2w0" path="res://D3D/vegetation_meshes/Rock6.res" id="7_00i3l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ml7rq"]
+radius = 0.503436
+
+[node name="Rock" type="StaticBody3D" node_paths=PackedStringArray("meshInstance")]
+collision_mask = 3
+script = ExtResource("1_8ik81")
+randomize_y_rotation = true
+meshes = Array[Mesh]([ExtResource("2_8m885"), ExtResource("3_pcbq3"), ExtResource("4_mtaub"), ExtResource("5_vjmdm"), ExtResource("6_ecyxe"), ExtResource("7_00i3l")])
+meshInstance = NodePath("MeshInstance3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ml7rq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = ExtResource("7_00i3l")

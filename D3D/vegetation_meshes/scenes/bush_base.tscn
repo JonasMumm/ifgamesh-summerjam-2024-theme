@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://bl3qi4jys8bxe"]
+
+[ext_resource type="Script" path="res://D3D/vegetation_meshes/scenes/prop.gd" id="1_5qnrs"]
+[ext_resource type="ArrayMesh" uid="uid://pwx6annw2lu1" path="res://D3D/vegetation_meshes/BushBase1.res" id="2_bh8lj"]
+[ext_resource type="ArrayMesh" uid="uid://c026v00i44rhr" path="res://D3D/vegetation_meshes/BushBase2.res" id="3_3wh0r"]
+[ext_resource type="ArrayMesh" uid="uid://clv0s6253t283" path="res://D3D/vegetation_meshes/BushBase3.res" id="4_ap8yx"]
+[ext_resource type="ArrayMesh" uid="uid://cgud471bqkj03" path="res://D3D/vegetation_meshes/BushBase4.res" id="5_r488h"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ml7rq"]
+radius = 0.392119
+
+[node name="BushBase" type="StaticBody3D" node_paths=PackedStringArray("meshInstance")]
+collision_mask = 3
+script = ExtResource("1_5qnrs")
+randomize_y_rotation = true
+meshes = Array[Mesh]([ExtResource("2_bh8lj"), ExtResource("3_3wh0r"), ExtResource("4_ap8yx"), ExtResource("5_r488h")])
+meshInstance = NodePath("MeshInstance3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ml7rq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = ExtResource("2_bh8lj")

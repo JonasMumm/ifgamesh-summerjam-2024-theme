@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1p00r0jk5un0"]
+
+[ext_resource type="Script" path="res://D3D/vegetation_meshes/scenes/prop.gd" id="1_vhe2p"]
+[ext_resource type="ArrayMesh" uid="uid://6nv48loxcc87" path="res://D3D/vegetation_meshes/Palm1.res" id="2_taxru"]
+[ext_resource type="ArrayMesh" uid="uid://dk5rb6uystphq" path="res://D3D/vegetation_meshes/Palm2.res" id="3_b8ne1"]
+[ext_resource type="ArrayMesh" uid="uid://huijf6dgh0up" path="res://D3D/vegetation_meshes/Palm3.res" id="4_iwddr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ml7rq"]
+radius = 0.3479
+
+[node name="Palmtree" type="StaticBody3D" node_paths=PackedStringArray("meshInstance")]
+collision_mask = 3
+script = ExtResource("1_vhe2p")
+randomize_y_rotation = true
+meshes = Array[Mesh]([ExtResource("2_taxru"), ExtResource("2_taxru"), ExtResource("2_taxru"), ExtResource("3_b8ne1"), ExtResource("4_iwddr")])
+meshInstance = NodePath("MeshInstance3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ml7rq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.443491, 0, 0, 0, 0.443491, 0, 0, 0, 0.443491, 0, 0, 0)
+mesh = ExtResource("2_taxru")
