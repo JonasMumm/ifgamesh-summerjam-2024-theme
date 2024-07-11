@@ -1,9 +1,7 @@
-[gd_scene load_steps=41 format=4 uid="uid://pwht7wptgeo2"]
+[gd_scene load_steps=39 format=4 uid="uid://pwht7wptgeo2"]
 
 [ext_resource type="Script" path="res://game_controller.gd" id="1_hxmck"]
-[ext_resource type="ArrayMesh" uid="uid://c8cuqjitg2g6h" path="res://D3D/IslesBase.res" id="2_fexv7"]
 [ext_resource type="Material" uid="uid://g1l4vcxbw8o4" path="res://D3D/world_material.tres" id="2_ojf13"]
-[ext_resource type="ArrayMesh" uid="uid://dh5rkb22rlruv" path="res://D3D/IslesWalls.res" id="3_5u6yq"]
 [ext_resource type="Script" path="res://camera_controller.gd" id="4_bm366"]
 [ext_resource type="Script" path="res://vehicle_spawner.gd" id="5_1eebp"]
 [ext_resource type="PackedScene" uid="uid://cqejng2gukyf5" path="res://car.tscn" id="6_ofcjf"]
@@ -284,16 +282,6 @@ transform = Transform3D(0.945301, 0.260082, -0.196882, 0.00716554, 0.586864, 0.8
 light_color = Color(1, 0.8505, 0.61, 1)
 shadow_enabled = true
 directional_shadow_mode = 1
-
-[node name="IsleFloor" type="MeshInstance3D" parent="."]
-material_override = ExtResource("2_ojf13")
-mesh = ExtResource("2_fexv7")
-skeleton = NodePath("")
-
-[node name="IsleSideWall" type="MeshInstance3D" parent="."]
-visible = false
-mesh = ExtResource("3_5u6yq")
-skeleton = NodePath("")
 
 [node name="IsleBody" type="StaticBody3D" parent="."]
 
