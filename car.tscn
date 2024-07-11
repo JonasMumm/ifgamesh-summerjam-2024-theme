@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqejng2gukyf5"]
+[gd_scene load_steps=10 format=3 uid="uid://cqejng2gukyf5"]
 
 [ext_resource type="Script" path="res://placeholder_controller.gd" id="1_dha52"]
 [ext_resource type="Script" path="res://route_placer.gd" id="2_wa63m"]
 [ext_resource type="PackedScene" uid="uid://chrv1kjp5lhns" path="res://route_markerSIMPLE.tscn" id="3_t1rm0"]
 [ext_resource type="PackedScene" uid="uid://d55y4pnterdc" path="res://D3D/tire.blend" id="4_044w2"]
+[ext_resource type="AudioStream" uid="uid://yx7ecfdes7yl" path="res://Sound/Camaro_ZL1_t7_Onbrd_Start_Idle_Blips_Steady_in_Neutral_Off_Engine-loop.mp3" id="5_5ibyo"]
+[ext_resource type="Script" path="res://SpeedPitchController.gd" id="6_jbg5y"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p3r2g"]
 friction = 0.0
@@ -52,3 +54,16 @@ transform = Transform3D(-0.163148, 0, -1.42628e-08, 0, 0.163148, 0, 1.42628e-08,
 
 [node name="tire4" parent="Wheels" instance=ExtResource("4_044w2")]
 transform = Transform3D(-0.163148, 0, -1.42628e-08, 0, 0.163148, 0, 1.42628e-08, 0, -0.163148, -0.089, 0, 0.058)
+
+[node name="Engine" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_5ibyo")
+autoplay = true
+parameters/looping = true
+
+[node name="SpeedPitchController" type="Node" parent="." node_paths=PackedStringArray("rb", "sound")]
+script = ExtResource("6_jbg5y")
+rb = NodePath("..")
+sound = NodePath("../Engine")
+pitch_min = 0.3
+pitch_max = 2.0
+speed_max = 2.0

@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ct5upnqs7cwe0"]
+[gd_scene load_steps=10 format=3 uid="uid://ct5upnqs7cwe0"]
 
 [ext_resource type="Script" path="res://snap.gd" id="1_tkf4s"]
 [ext_resource type="PackedScene" uid="uid://b5hpkdakth8at" path="res://snap_ui.tscn" id="2_6q37s"]
+[ext_resource type="AudioStream" uid="uid://bcmtupbie0ifv" path="res://Sound/151799__jamesmontour__shutterwflashcharge-polaroidonestep.wav" id="3_leeli"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_5ws8n"]
 size = Vector2(0.75, 0.9)
@@ -108,3 +109,7 @@ libraries = {
 "": SubResource("AnimationLibrary_dt0hj")
 }
 autoplay = "appear"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_leeli")
+autoplay = true

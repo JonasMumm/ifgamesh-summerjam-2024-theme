@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://pwht7wptgeo2"]
+[gd_scene load_steps=41 format=4 uid="uid://pwht7wptgeo2"]
 
 [ext_resource type="Script" path="res://game_controller.gd" id="1_hxmck"]
 [ext_resource type="ArrayMesh" uid="uid://c8cuqjitg2g6h" path="res://D3D/IslesBase.res" id="2_fexv7"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://cam_distance_scaler.gd" id="11_ccif3"]
 [ext_resource type="PackedScene" uid="uid://ct5upnqs7cwe0" path="res://snap.tscn" id="12_oli2d"]
 [ext_resource type="PackedScene" uid="uid://dtuskqjxdt8yo" path="res://D3D/Isles.blend" id="13_fujsf"]
+[ext_resource type="AudioStream" uid="uid://bkn6jyp42gdug" path="res://Sound/02 - Faithseed Loop.mp3" id="15_ep0d7"]
 [ext_resource type="PackedScene" uid="uid://bl3qi4jys8bxe" path="res://D3D/vegetation_meshes/scenes/bush_base.tscn" id="15_txulm"]
 [ext_resource type="PackedScene" uid="uid://bctiirss58fwx" path="res://D3D/vegetation_meshes/scenes/bush_1.tscn" id="15_u61gf"]
 [ext_resource type="PackedScene" uid="uid://kw6xdw5qa2ls" path="res://D3D/vegetation_meshes/scenes/rock.tscn" id="16_mmhs5"]
@@ -511,6 +512,12 @@ mesh = SubResource("ArrayMesh_i43hi")
 
 [node name="2Visual" parent="Isles" index="5"]
 mesh = SubResource("ArrayMesh_jr1bc")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_ep0d7")
+volume_db = -36.017
+autoplay = true
+parameters/looping = true
 
 [node name="Props" type="Node3D" parent="."]
 
