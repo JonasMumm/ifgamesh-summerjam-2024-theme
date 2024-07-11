@@ -92,6 +92,9 @@ func OnSwitchoverAreaEnter(b : Node3D):
 	route_marker_switchover_area.body_entered.disconnect(OnSwitchoverAreaEnter)
 	
 	if !ResourceLoader.exists(default_route_path):
+		for v in route_container.get_children():
+			v.owner = null
+		
 		for v in route_marker_area.get_overlapping_areas():
 			v.get_parent().owner = route_container
 	

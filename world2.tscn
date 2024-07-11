@@ -126,7 +126,7 @@ _data = {
 size = Vector3(36.2843, 1, 18.4365)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_og6xq"]
-size = Vector3(1.69244, 1, 0.436279)
+size = Vector3(0.678969, 1, 0.737732)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yxf1f"]
 
@@ -498,7 +498,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RouteMarkerFailsafeSwitchoverTrigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.540192, 0, 0.212769)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0334549, 0, 0.545258)
 shape = SubResource("BoxShape3D_og6xq")
 
 [node name="Isles" parent="." instance=ExtResource("13_fujsf")]
