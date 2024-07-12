@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqejng2gukyf5"]
+[gd_scene load_steps=11 format=3 uid="uid://cqejng2gukyf5"]
 
 [ext_resource type="Script" path="res://placeholder_controller.gd" id="1_dha52"]
+[ext_resource type="ArrayMesh" uid="uid://c1dc5ouggn4sl" path="res://D3D/points of interests/van.obj" id="2_njame"]
 [ext_resource type="Script" path="res://route_placer.gd" id="2_wa63m"]
 [ext_resource type="PackedScene" uid="uid://chrv1kjp5lhns" path="res://route_markerSIMPLE.tscn" id="3_t1rm0"]
 [ext_resource type="PackedScene" uid="uid://d55y4pnterdc" path="res://D3D/tire.blend" id="4_044w2"]
@@ -32,7 +33,12 @@ route_placer = NodePath("RoutePlacer")
 shape = SubResource("SphereShape3D_yqwsl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("SphereMesh_rbwwo")
+
+[node name="CarBody" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.109752, 0, 0, 0, 0.109752, 0, 0, 0, 0.109752, -0.217027, -0.330598, 0.230229)
+mesh = ExtResource("2_njame")
 
 [node name="RoutePlacer" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
@@ -42,6 +48,7 @@ intervalDistance = 0.3
 
 [node name="Wheels" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0539009, 0)
+visible = false
 
 [node name="tire" parent="Wheels" instance=ExtResource("4_044w2")]
 transform = Transform3D(0.163148, 0, 0, 0, 0.163148, 0, 0, 0, 0.163148, 0.089831, 0, -0.0575087)

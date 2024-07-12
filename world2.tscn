@@ -314,6 +314,7 @@ shape = SubResource("ConcavePolygonShape3D_847q7")
 mesh = SubResource("PlaneMesh_rbgag")
 
 [node name="CameraController" type="Node3D" parent="." node_paths=PackedStringArray("cam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10001, 0, 23.6207)
 script = ExtResource("4_bm366")
 cam = NodePath("RotationOffset/Camera3D")
 position_damping_lambda = 3.0

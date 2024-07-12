@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0pssokiknx7u"]
+[gd_scene load_steps=10 format=3 uid="uid://c0pssokiknx7u"]
 
 [ext_resource type="Script" path="res://placeholder_controller.gd" id="1_ouqvi"]
 [ext_resource type="Script" path="res://route_placer.gd" id="2_8wexm"]
 [ext_resource type="PackedScene" uid="uid://dh05rbjdwgx5q" path="res://route_marker_blue.tscn" id="3_2yfl1"]
 [ext_resource type="AudioStream" uid="uid://yx7ecfdes7yl" path="res://Sound/Camaro_ZL1_t7_Onbrd_Start_Idle_Blips_Steady_in_Neutral_Off_Engine-loop.mp3" id="4_ksdrw"]
 [ext_resource type="Script" path="res://SpeedPitchController.gd" id="5_e0x8w"]
+[ext_resource type="ArrayMesh" uid="uid://o5tgp0uqoid7" path="res://D3D/points of interests/ship.obj" id="6_5g4sv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p3r2g"]
 friction = 0.0
@@ -31,6 +32,7 @@ route_placer = NodePath("RoutePlacer")
 shape = SubResource("SphereShape3D_yqwsl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("SphereMesh_rbwwo")
 
 [node name="RoutePlacer" type="Node3D" parent="."]
@@ -51,3 +53,7 @@ sound = NodePath("../Engine")
 pitch_min = 0.3
 pitch_max = 2.0
 speed_max = 2.0
+
+[node name="BoatBody" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0925348, 0, -8.08965e-09, 0, 0.0925348, 0, 8.08965e-09, 0, -0.0925348, 0.155, -0.286, -0.213)
+mesh = ExtResource("6_5g4sv")
