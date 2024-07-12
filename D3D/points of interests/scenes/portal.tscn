@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhal1u1cnvust"]
+
+[ext_resource type="ArrayMesh" uid="uid://cjuw0ohqelx1n" path="res://D3D/points of interests/portal.obj" id="1_h85bt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4glth"]
+size = Vector3(3.60944, 3.2851, 1)
+
+[node name="Portal" type="StaticBody3D"]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00790405, 1.66391, 0)
+shape = SubResource("BoxShape3D_4glth")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.94064, -2.00894, 2.01381)
+mesh = ExtResource("1_h85bt")

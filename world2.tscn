@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://pwht7wptgeo2"]
+[gd_scene load_steps=53 format=4 uid="uid://pwht7wptgeo2"]
 
 [ext_resource type="Script" path="res://game_controller.gd" id="1_hxmck"]
 [ext_resource type="Material" uid="uid://g1l4vcxbw8o4" path="res://D3D/world_material.tres" id="2_ojf13"]
@@ -25,6 +25,13 @@
 [ext_resource type="Texture2D" uid="uid://bf3csfknc54kx" path="res://Textures/pngs/text/stolen.png" id="16_p3b5f"]
 [ext_resource type="PackedScene" uid="uid://byyuit1bwsgf7" path="res://D3D/vegetation_meshes/scenes/poptree.tscn" id="17_dowdd"]
 [ext_resource type="PackedScene" uid="uid://d1p00r0jk5un0" path="res://D3D/vegetation_meshes/scenes/palmtree.tscn" id="19_4qdgc"]
+[ext_resource type="PackedScene" uid="uid://c50m1osaf1nxw" path="res://D3D/points of interests/scenes/letter.tscn" id="26_nfq78"]
+[ext_resource type="PackedScene" uid="uid://crgjy508q7veo" path="res://D3D/points of interests/scenes/camera.tscn" id="27_avytd"]
+[ext_resource type="PackedScene" uid="uid://fpywcxtsbt0v" path="res://D3D/points of interests/scenes/paris.tscn" id="28_v4vja"]
+[ext_resource type="PackedScene" uid="uid://dhal1u1cnvust" path="res://D3D/points of interests/scenes/portal.tscn" id="29_fr61r"]
+[ext_resource type="PackedScene" uid="uid://c3yiu2rp4ha0d" path="res://D3D/points of interests/scenes/rocket.tscn" id="30_1v4m1"]
+[ext_resource type="PackedScene" uid="uid://daiahxgbmvj4g" path="res://D3D/points of interests/scenes/stolen.tscn" id="31_wyxem"]
+[ext_resource type="PackedScene" uid="uid://bjunvcuwsk1qv" path="res://D3D/points of interests/scenes/island.tscn" id="32_pmlv4"]
 
 [sub_resource type="Environment" id="Environment_uay2i"]
 ambient_light_source = 2
@@ -464,7 +471,7 @@ transform = Transform3D(0.961232, 0, -0.275739, 0, 1, 0, 0.275739, 0, 0.961232, 
 texture = ExtResource("12_dqhmr")
 
 [node name="Snap3" parent="Snaps" instance=ExtResource("12_oli2d")]
-transform = Transform3D(0.986144, 0, 0.16589, 0, 1, 0, -0.16589, 0, 0.986144, 3.97604, 0.208, 22.138)
+transform = Transform3D(0.986144, 0, 0.16589, 0, 1, 0, -0.16589, 0, 0.986144, 5.1978, 0.208, 22.2342)
 texture = ExtResource("13_0q0d2")
 
 [node name="Snap4" parent="Snaps" instance=ExtResource("12_oli2d")]
@@ -989,8 +996,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5867, 0, 4.80321)
 [node name="BushBase25" parent="Props/Land" instance=ExtResource("15_txulm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.51672, 0, 6.3822)
 
+[node name="Letter" parent="Props/Land" instance=ExtResource("26_nfq78")]
+transform = Transform3D(-5.62765e-09, 0, 0.128746, 0, 0.128746, 0, -0.128746, 0, -5.62765e-09, -9.06763, 0, -4.1904)
+
+[node name="Camera" parent="Props/Land" instance=ExtResource("27_avytd")]
+transform = Transform3D(-0.0550953, 0, -0.0918101, 0, 0.107073, 0, 0.0918101, 0, -0.0550953, -11.1192, 0, 2.52358)
+
+[node name="Portal" parent="Props/Land" instance=ExtResource("29_fr61r")]
+transform = Transform3D(0.188399, 0, -0.101192, 0, 0.213855, 0, 0.101192, 0, 0.188399, 0.0542421, 0, 1.93568)
+
+[node name="Rocket" parent="Props/Land" instance=ExtResource("30_1v4m1")]
+transform = Transform3D(0.10661, 0, -0.0775819, 0, 0.131851, 0, 0.0775819, 0, 0.10661, 6.67067, 0, 1.6366)
+
+[node name="Stolen" parent="Props/Land" instance=ExtResource("31_wyxem")]
+transform = Transform3D(0.140366, 0, 0.0478063, 0, 0.148284, 0, -0.0478063, 0, 0.140366, 3.55901, 0, 0.32312)
+
 [node name="Sea" type="Node3D" parent="Props"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.559, 0, 19.045)
+
+[node name="Island" parent="Props/Sea" instance=ExtResource("32_pmlv4")]
+transform = Transform3D(0.393586, 0, 0.266107, 0, 0.475103, 0, -0.266107, 0, 0.393586, 14.8017, 0, -1.51868)
 
 [node name="Rock" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.73337, 0, -2.00323)
@@ -1036,6 +1061,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12979, 0, -1.3931)
 
 [node name="Rock15" parent="Props/Sea" instance=ExtResource("16_mmhs5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.48782, 0, -3.2233)
+
+[node name="Paris" parent="Props/Sea" instance=ExtResource("28_v4vja")]
+transform = Transform3D(0.202846, 0, 0, 0, 0.202846, 0, 0, 0, 0.202846, -4.69928, 0, 3.46533)
 
 [connection signal="vehicle_entered" from="Checkpoints/checkpointA1" to="Snaps/Snap1" method="_on_checkpoint_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointA2" to="Snaps/Snap2" method="_on_checkpoint_entered"]

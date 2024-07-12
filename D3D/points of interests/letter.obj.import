@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://catk6adwcv46l"
+path="res://.godot/imported/letter.obj-227e506e541e0e9bf8862fe3160fe55e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/letter.obj-227e506e541e0e9bf8862fe3160fe55e.mesh"]
+
+source_file="res://D3D/points of interests/letter.obj"
+dest_files=["res://.godot/imported/letter.obj-227e506e541e0e9bf8862fe3160fe55e.mesh", "res://.godot/imported/letter.obj-227e506e541e0e9bf8862fe3160fe55e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

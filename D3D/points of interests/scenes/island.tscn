@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjunvcuwsk1qv"]
+
+[ext_resource type="ArrayMesh" uid="uid://b3f8tc5nh6dmo" path="res://D3D/points of interests/island.obj" id="1_0cu0i"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8odw7"]
+radius = 0.884599
+height = 6.51569
+
+[node name="Island" type="StaticBody3D"]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_8odw7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41442, -2.00894, 1.85574)
+mesh = ExtResource("1_0cu0i")

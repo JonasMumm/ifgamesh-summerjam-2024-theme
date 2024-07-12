@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://daiahxgbmvj4g"]
+
+[ext_resource type="ArrayMesh" uid="uid://c8crslss07jb" path="res://D3D/points of interests/stolen.obj" id="1_yenl6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_64b2m"]
+size = Vector3(3.95349, 1.58862, 3.96872)
+
+[node name="Stolen" type="StaticBody3D"]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00750732, 0.674683, 0.00773621)
+shape = SubResource("BoxShape3D_64b2m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98285, -2.00894, 2.00217)
+mesh = ExtResource("1_yenl6")

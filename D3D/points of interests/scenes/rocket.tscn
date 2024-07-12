@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3yiu2rp4ha0d"]
+
+[ext_resource type="ArrayMesh" uid="uid://b8gk6cdy04qif" path="res://D3D/points of interests/rocket.obj" id="1_urv8b"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8odw7"]
+radius = 1.28315
+height = 8.04258
+
+[node name="Rocket" type="StaticBody3D"]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_8odw7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87496, -2.00894, 2.0407)
+mesh = ExtResource("1_urv8b")
