@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2tqeqgc6kv7g"
-path.s3tc="res://.godot/imported/van.png-619ef4f4c4fc60313451dcd993886988.s3tc.ctex"
+path="res://.godot/imported/van.png-619ef4f4c4fc60313451dcd993886988.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://D3D/points of interests/van.png"
-dest_files=["res://.godot/imported/van.png-619ef4f4c4fc60313451dcd993886988.s3tc.ctex"]
+dest_files=["res://.godot/imported/van.png-619ef4f4c4fc60313451dcd993886988.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

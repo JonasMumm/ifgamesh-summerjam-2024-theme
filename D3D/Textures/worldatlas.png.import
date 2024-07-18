@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxb01gwykdphg"
 path.s3tc="res://.godot/imported/worldatlas.png-3ec3caaf92b637ede1c3cd96a7e8a04c.s3tc.ctex"
+path.etc2="res://.godot/imported/worldatlas.png-3ec3caaf92b637ede1c3cd96a7e8a04c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://D3D/Textures/worldatlas.png"
-dest_files=["res://.godot/imported/worldatlas.png-3ec3caaf92b637ede1c3cd96a7e8a04c.s3tc.ctex"]
+dest_files=["res://.godot/imported/worldatlas.png-3ec3caaf92b637ede1c3cd96a7e8a04c.s3tc.ctex", "res://.godot/imported/worldatlas.png-3ec3caaf92b637ede1c3cd96a7e8a04c.etc2.ctex"]
 
 [params]
 

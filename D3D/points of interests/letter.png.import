@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccpoutp10a1hy"
-path.s3tc="res://.godot/imported/letter.png-d6c2cf5b32c3bb92f6d258ea82589539.s3tc.ctex"
+path="res://.godot/imported/letter.png-d6c2cf5b32c3bb92f6d258ea82589539.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://D3D/points of interests/letter.png"
-dest_files=["res://.godot/imported/letter.png-d6c2cf5b32c3bb92f6d258ea82589539.s3tc.ctex"]
+dest_files=["res://.godot/imported/letter.png-d6c2cf5b32c3bb92f6d258ea82589539.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

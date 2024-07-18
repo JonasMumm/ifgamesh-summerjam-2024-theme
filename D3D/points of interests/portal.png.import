@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://da2na2fuup7g2"
-path.s3tc="res://.godot/imported/portal.png-9c1aeb5f4c60880a2633bf719744b53f.s3tc.ctex"
+path="res://.godot/imported/portal.png-9c1aeb5f4c60880a2633bf719744b53f.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://D3D/points of interests/portal.png"
-dest_files=["res://.godot/imported/portal.png-9c1aeb5f4c60880a2633bf719744b53f.s3tc.ctex"]
+dest_files=["res://.godot/imported/portal.png-9c1aeb5f4c60880a2633bf719744b53f.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
