@@ -9,14 +9,10 @@ signal input_changed(input : Vector2)
 var button := -1
 var down_pos : Vector2
 
-func _ready() -> void:
-	input_changed.connect(on_inp)
-
 func _gui_input(event : InputEvent):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			down_pos = event.position
-			print(down_pos)
 			button = event.button_index
 			thumbstick_bg.visible = true
 			thumbstick_knob.visible = true
@@ -34,10 +30,3 @@ func _gui_input(event : InputEvent):
 			if diff.length()>max_radius:
 				diff = diff.normalized() * max_radius
 			thumbstick_knob.position = down_pos + diff  - thumbstick_knob.size * 0.5
-		
-
-func _process(delta: float) -> void:
-	pass
-	
-func on_inp(inp : Vector2):
-	print(inp)
