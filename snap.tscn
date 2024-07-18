@@ -90,11 +90,12 @@ _data = {
 "appear": SubResource("Animation_d4ar4")
 }
 
-[node name="Snap" type="Node3D" node_paths=PackedStringArray("animation_player", "texturerect")]
+[node name="Snap" type="Node3D" node_paths=PackedStringArray("animation_player", "texturerect", "audio_stram_player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22732, 0)
 script = ExtResource("1_tkf4s")
 animation_player = NodePath("AnimationPlayer")
 texturerect = NodePath("SubViewport/SnapUi/ColorRect/TextureRect")
+audio_stram_player = NodePath("AudioStreamPlayer")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 size = Vector2i(500, 600)
@@ -115,6 +116,5 @@ autoplay = "appear"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_leeli")
-autoplay = true
 
 [editable path="SubViewport/SnapUi"]
