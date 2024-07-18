@@ -16,8 +16,10 @@ const default_route_path = "res://default_route.tscn"
 @export var snaps : Array[snap]
 @export var route_marker_area : Area3D
 @export var route_marker_switchover_area : Area3D
+@export var thumbstick : thumbstick_area
 
 var vehicle : vehicle_controller
+var thumbstick_input : Vector2
 
 func _ready():
 	for v in checkpoints:
@@ -37,6 +39,7 @@ func _ready():
 	default_spawner.SpawnVehicle()
 	
 	route_marker_switchover_area.body_entered.connect(OnSwitchoverAreaEnter)
+	thumbstick.input_changed.connect(on_thumbstick_input_changed)
 
 func _process(delta:float):
 	if Input.is_action_pressed("ui_cancel"):
@@ -87,6 +90,7 @@ func OnVehicleSpawned(v : vehicle_controller):
 	vehicle = v
 	v.route_placer.route_parent = route_container
 	vehicle.route_placer.placed.connect(OnRouteMarkerPlaced)
+	vehicle.stick_input = thumbstick_input
 
 func OnRouteMarkerPlaced(v:Node3D):
 	route_marker_scaler.add(v)
@@ -119,4 +123,9 @@ func OnSwitchoverAreaEnter(b : Node3D):
 	
 	for v in default_instance.get_children():
 		OnRouteMarkerPlaced(v as Node3D)
+		
+func on_thumbstick_input_changed(inp : Vector2):
+	thumbstick_input = inp
+	if vehicle != null:
+		vehicle.stick_input = thumbstick_input
 	

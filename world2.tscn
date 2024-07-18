@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://pwht7wptgeo2"]
+[gd_scene load_steps=55 format=4 uid="uid://pwht7wptgeo2"]
 
 [ext_resource type="Script" path="res://game_controller.gd" id="1_hxmck"]
 [ext_resource type="Material" uid="uid://g1l4vcxbw8o4" path="res://D3D/world_material.tres" id="2_ojf13"]
@@ -32,6 +32,8 @@
 [ext_resource type="PackedScene" uid="uid://c3yiu2rp4ha0d" path="res://D3D/points of interests/scenes/rocket.tscn" id="30_1v4m1"]
 [ext_resource type="PackedScene" uid="uid://daiahxgbmvj4g" path="res://D3D/points of interests/scenes/stolen.tscn" id="31_wyxem"]
 [ext_resource type="PackedScene" uid="uid://bjunvcuwsk1qv" path="res://D3D/points of interests/scenes/island.tscn" id="32_pmlv4"]
+[ext_resource type="Script" path="res://thumbstick_area.gd" id="33_u5slc"]
+[ext_resource type="Texture2D" uid="uid://bvtdautm14b7c" path="res://Textures/circle.png" id="34_rosgb"]
 
 [sub_resource type="Environment" id="Environment_uay2i"]
 ambient_light_source = 2
@@ -271,7 +273,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_eqpof")
 
-[node name="World" type="Node3D" node_paths=PackedStringArray("checkpoints", "vehicle_spawners", "default_spawner", "cam", "route_container", "compass", "final_cam_position", "route_marker_scaler", "snap_scaler", "snaps", "route_marker_area", "route_marker_switchover_area")]
+[node name="World" type="Node3D" node_paths=PackedStringArray("checkpoints", "vehicle_spawners", "default_spawner", "cam", "route_container", "compass", "final_cam_position", "route_marker_scaler", "snap_scaler", "snaps", "route_marker_area", "route_marker_switchover_area", "thumbstick")]
 script = ExtResource("1_hxmck")
 checkpoints = [NodePath("Checkpoints/checkpointA1"), NodePath("Checkpoints/checkpointA2"), NodePath("Checkpoints/checkpointA3"), NodePath("Checkpoints/checkpointA4"), NodePath("Checkpoints/checkpointW1"), NodePath("Checkpoints/checkpointW2"), NodePath("Checkpoints/checkpointW3"), NodePath("Checkpoints/checkpointW4"), NodePath("Checkpoints/checkpointAA1"), NodePath("Checkpoints/checkpointAA2"), NodePath("Checkpoints/checkpointAA3"), NodePath("Checkpoints/checkpointAA4"), NodePath("Checkpoints/checkpointAA5"), NodePath("Checkpoints/checkpointY1"), NodePath("Checkpoints/checkpointY2"), NodePath("Checkpoints/checkpointY3"), NodePath("Checkpoints/checkpointY4")]
 vehicle_spawners = [NodePath("VehicleSpawners/vehicle_spawnerACar"), NodePath("VehicleSpawners/vehicle_spawnerABoat"), NodePath("VehicleSpawners/vehicle_spawnerWCar"), NodePath("VehicleSpawners/vehicle_spawnerWBoat"), NodePath("VehicleSpawners/vehicle_spawnerAACar"), NodePath("VehicleSpawners/vehicle_spawnerAABoat"), NodePath("VehicleSpawners/vehicle_spawnerYCar")]
@@ -287,6 +289,7 @@ snap_scaler = NodePath("CamDistScalers/snapScaler")
 snaps = [NodePath("Snaps/Snap1"), NodePath("Snaps/Snap2"), NodePath("Snaps/Snap3"), NodePath("Snaps/Snap4"), NodePath("Snaps/Snap5"), NodePath("Snaps/Snap6"), NodePath("Snaps/Snap7")]
 route_marker_area = NodePath("RouteMarkerArea")
 route_marker_switchover_area = NodePath("RouteMarkerFailsafeSwitchoverTrigger")
+thumbstick = NodePath("CanvasLayer/ThumbstickArea")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_uay2i")
@@ -1065,6 +1068,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.48782, 0, -3.2233)
 
 [node name="Paris" parent="Props/Sea" instance=ExtResource("28_v4vja")]
 transform = Transform3D(0.202846, 0, 0, 0, 0.202846, 0, 0, 0, 0.202846, -4.69928, 0, 3.46533)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ThumbstickArea" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("thumbstick_bg", "thumbstick_knob")]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("33_u5slc")
+thumbstick_bg = NodePath("bg")
+thumbstick_knob = NodePath("knob")
+max_radius = 60.0
+
+[node name="bg" type="TextureRect" parent="CanvasLayer/ThumbstickArea"]
+self_modulate = Color(1, 1, 1, 0.439216)
+layout_mode = 1
+anchors_preset = -1
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(60, 60)
+texture = ExtResource("34_rosgb")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="knob" type="TextureRect" parent="CanvasLayer/ThumbstickArea"]
+self_modulate = Color(1, 1, 1, 0.776471)
+layout_mode = 1
+anchors_preset = -1
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("34_rosgb")
+expand_mode = 1
 
 [connection signal="vehicle_entered" from="Checkpoints/checkpointA1" to="Snaps/Snap1" method="_on_checkpoint_entered"]
 [connection signal="vehicle_entered" from="Checkpoints/checkpointA2" to="Snaps/Snap2" method="_on_checkpoint_entered"]

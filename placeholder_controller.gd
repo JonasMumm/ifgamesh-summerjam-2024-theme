@@ -5,8 +5,10 @@ extends RigidBody3D
 @export var rotation_speed : float
 @export var route_placer : route_placer
 
+var stick_input : Vector2
+
 func _physics_process(delta):
-	var input = Vector2(Input.get_axis("control_left", "control_right"), Input.get_axis("control_up", "control_down"))
+	var input = stick_input if stick_input != Vector2.ZERO else Vector2(Input.get_axis("control_left", "control_right"), Input.get_axis("control_up", "control_down"))
 	
 	if input.length_squared() == 0:
 		return
